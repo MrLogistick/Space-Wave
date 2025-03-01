@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TitlePanel : MonoBehaviour
 {
+    [SerializeField] GameObject titlePanel;
     [SerializeField] GameObject settingsPanel;
     [SerializeField] Slider volumeSlider;
     [SerializeField] GameObject resetMessage;
@@ -33,6 +34,7 @@ public class TitlePanel : MonoBehaviour
     public void SettingsPanel() {
         click.Play();
         settingsPanel.SetActive(true);
+        titlePanel.SetActive(false);
     }
 
     public void ResetData() {
@@ -75,6 +77,7 @@ public class TitlePanel : MonoBehaviour
     public void Back() {
         click.Play();
         settingsPanel.SetActive(false);
+        titlePanel.SetActive(true);
     }
 
     public void Quit() {
