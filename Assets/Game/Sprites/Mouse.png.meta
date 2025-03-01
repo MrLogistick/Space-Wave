@@ -1,0 +1,342 @@
+fileFormatVersion: 2
+guid: b5670a0c1967c464d9bc0a3b73e12db8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -357421434760999972
+    second: Mouse_0
+  - first:
+      213: 1506059532727745469
+    second: Mouse_1
+  - first:
+      213: 6951863735662602030
+    second: Mouse_2
+  - first:
+      213: -5248880233624170229
+    second: Mouse_3
+  - first:
+      213: 3033183314803414045
+    second: Mouse_4
+  - first:
+      213: 206407676937707439
+    second: Mouse_5
+  - first:
+      213: 2547671495467779820
+    second: Mouse_6
+  - first:
+      213: 9062499129308504459
+    second: Mouse_7
+  - first:
+      213: -4580875165984197824
+    second: Mouse_8
+  - first:
+      213: -7319190855899628408
+    second: Mouse_9
+  - first:
+      213: 2533154328078668260
+    second: Mouse_10
+  - first:
+      213: 3150626806568355086
+    second: Mouse_11
+  - first:
+      213: -2850553871561281453
+    second: Mouse_12
+  - first:
+      213: -389575765250044306
+    second: Mouse_13
+  - first:
+      213: 1820637262496067199
+    second: Mouse_14
+  - first:
+      213: -6346323614403405508
+    second: Mouse_15
+  - first:
+      213: -7637564836004506017
+    second: Mouse_16
+  - first:
+      213: -9032799485421835531
+    second: Mouse_17
+  - first:
+      213: -6962001098401753703
+    second: Mouse_18
+  - first:
+      213: -7413991362102919352
+    second: Mouse_19
+  - first:
+      213: 2746194653146656430
+    second: Mouse_20
+  - first:
+      213: -7116788724578128275
+    second: Mouse_21
+  - first:
+      213: 2952896397997306028
+    second: Mouse_22
+  - first:
+      213: -5619969615006322049
+    second: Mouse_23
+  - first:
+      213: -8513270135761459775
+    second: Mouse_24
+  - first:
+      213: -6946253406723520549
+    second: Mouse_25
+  - first:
+      213: 5703288202831690552
+    second: Mouse_26
+  - first:
+      213: -7400176338036666150
+    second: Mouse_27
+  - first:
+      213: 643291737778034719
+    second: Mouse_28
+  - first:
+      213: -108037537450899270
+    second: Mouse_29
+  - first:
+      213: 946363932966372908
+    second: Mouse_30
+  - first:
+      213: -7645114902011335250
+    second: Mouse_31
+  - first:
+      213: -7631157938227196364
+    second: Mouse_32
+  - first:
+      213: 446913088082598048
+    second: Mouse_33
+  - first:
+      213: 4212400859118991559
+    second: Mouse_34
+  - first:
+      213: 246134118481826481
+    second: Mouse_35
+  - first:
+      213: 5094921307049163335
+    second: Mouse_36
+  - first:
+      213: 341473336159144829
+    second: Mouse_37
+  - first:
+      213: 3578702882994160882
+    second: Mouse_38
+  - first:
+      213: -2072932234473290427
+    second: Mouse_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mouse_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdbc5f9491f2a0bf0800000000000000
+      internalID: -357421434760999972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mouse_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbbf3d26a2996e410800000000000000
+      internalID: 1506059532727745469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mouse_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e27e61b2c3bf97060800000000000000
+      internalID: 6951863735662602030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mouse_3
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01134ebc3b3827b0800000000000000
+      internalID: -5248880233624170229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7549f6e63673b9f48a213722bb94fb6d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mouse_0: -357421434760999972
+      Mouse_1: 1506059532727745469
+      Mouse_2: 6951863735662602030
+      Mouse_3: -5248880233624170229
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
