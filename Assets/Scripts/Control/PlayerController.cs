@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    bool oppositeGravity = false;
+    [HideInInspector]
+    public bool oppositeGravity = false;
     bool hasStarted = false;
 
     [HideInInspector]
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void Update() {
         if (Mathf.Abs(transform.position.y) > 13 && !GameState.instance.isDead) {
+            deathBy = "Planet";
             Die();
         }
 
