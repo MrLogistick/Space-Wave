@@ -1,133 +1,10 @@
 fileFormatVersion: 2
-guid: b5670a0c1967c464d9bc0a3b73e12db8
+guid: 58962d68d69615740985e5d24584274f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -357421434760999972
-    second: Mouse_0
-  - first:
-      213: 1506059532727745469
-    second: Mouse_1
-  - first:
-      213: 6951863735662602030
-    second: Mouse_2
-  - first:
-      213: -5248880233624170229
-    second: Mouse_3
-  - first:
-      213: 3033183314803414045
-    second: Mouse_4
-  - first:
-      213: 206407676937707439
-    second: Mouse_5
-  - first:
-      213: 2547671495467779820
-    second: Mouse_6
-  - first:
-      213: 9062499129308504459
-    second: Mouse_7
-  - first:
-      213: -4580875165984197824
-    second: Mouse_8
-  - first:
-      213: -7319190855899628408
-    second: Mouse_9
-  - first:
-      213: 2533154328078668260
-    second: Mouse_10
-  - first:
-      213: 3150626806568355086
-    second: Mouse_11
-  - first:
-      213: -2850553871561281453
-    second: Mouse_12
-  - first:
-      213: -389575765250044306
-    second: Mouse_13
-  - first:
-      213: 1820637262496067199
-    second: Mouse_14
-  - first:
-      213: -6346323614403405508
-    second: Mouse_15
-  - first:
-      213: -7637564836004506017
-    second: Mouse_16
-  - first:
-      213: -9032799485421835531
-    second: Mouse_17
-  - first:
-      213: -6962001098401753703
-    second: Mouse_18
-  - first:
-      213: -7413991362102919352
-    second: Mouse_19
-  - first:
-      213: 2746194653146656430
-    second: Mouse_20
-  - first:
-      213: -7116788724578128275
-    second: Mouse_21
-  - first:
-      213: 2952896397997306028
-    second: Mouse_22
-  - first:
-      213: -5619969615006322049
-    second: Mouse_23
-  - first:
-      213: -8513270135761459775
-    second: Mouse_24
-  - first:
-      213: -6946253406723520549
-    second: Mouse_25
-  - first:
-      213: 5703288202831690552
-    second: Mouse_26
-  - first:
-      213: -7400176338036666150
-    second: Mouse_27
-  - first:
-      213: 643291737778034719
-    second: Mouse_28
-  - first:
-      213: -108037537450899270
-    second: Mouse_29
-  - first:
-      213: 946363932966372908
-    second: Mouse_30
-  - first:
-      213: -7645114902011335250
-    second: Mouse_31
-  - first:
-      213: -7631157938227196364
-    second: Mouse_32
-  - first:
-      213: 446913088082598048
-    second: Mouse_33
-  - first:
-      213: 4212400859118991559
-    second: Mouse_34
-  - first:
-      213: 246134118481826481
-    second: Mouse_35
-  - first:
-      213: 5094921307049163335
-    second: Mouse_36
-  - first:
-      213: 341473336159144829
-    second: Mouse_37
-  - first:
-      213: 3578702882994160882
-    second: Mouse_38
-  - first:
-      213: -2072932234473290427
-    second: Mouse_39
-  - first:
-      213: -1728881393785294117
-    second: Mouse_40
-  - first:
-      213: -6267421921069716113
-    second: Mouse_41
+      213: 274340108882314515
+    second: BrokenVessels_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -236,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mouse_0
+      name: BrokenVessels_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 47
-        height: 42
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,74 +128,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cdbc5f9491f2a0bf0800000000000000
-      internalID: -357421434760999972
+      spriteID: 315829120e6aec300800000000000000
+      internalID: 274340108882314515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_1
+      name: BrokenVessels_1
       rect:
         serializedVersion: 2
-        x: 47
+        x: 16
         y: 0
-        width: 47
-        height: 42
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dbbf3d26a2996e410800000000000000
-      internalID: 1506059532727745469
+      spriteID: a47834d9d6d181447885115cf249c8c8
+      internalID: 1215523003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_2
+      name: BrokenVessels_2
       rect:
         serializedVersion: 2
-        x: 94
+        x: 32
         y: 0
-        width: 47
-        height: 42
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e27e61b2c3bf97060800000000000000
-      internalID: 6951863735662602030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mouse_3
-      rect:
-        serializedVersion: 2
-        x: 141
-        y: 0
-        width: 47
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b01134ebc3b3827b0800000000000000
-      internalID: -5248880233624170229
+      spriteID: 272791c9e917796429684ed1fbd0bc98
+      internalID: 297663329
       vertices: []
       indices: 
       edges: []
@@ -327,7 +182,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ec41991a7e86cf843ba4de34c7d84a94
+    spriteID: 1a9bc8e7c8c93c24fb01bbc0765f444d
     internalID: 0
     vertices: []
     indices: 
@@ -337,10 +192,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mouse_0: -357421434760999972
-      Mouse_1: 1506059532727745469
-      Mouse_2: 6951863735662602030
-      Mouse_3: -5248880233624170229
+      BrokenVessels_0: 274340108882314515
+      BrokenVessels_1: 1215523003
+      BrokenVessels_2: 297663329
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

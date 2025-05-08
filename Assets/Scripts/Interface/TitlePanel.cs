@@ -1,30 +1,35 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TitlePanel : MonoBehaviour
 {
+    [Header("Panels & Text")]
     [SerializeField] GameObject titlePanel;
     [SerializeField] GameObject settingsPanel;
-    [SerializeField] Slider volumeSlider;
     [SerializeField] GameObject resetMessage;
-    [SerializeField] Image ssPin;
-    [SerializeField] Image acPin;
-    [SerializeField] Sprite[] PinSprite = new Sprite[2];
-    [SerializeField] AudioSource click;
+
+    [Header("Pin Objects")]
+    [SerializeField] Image[] pinObjects = new Image[3];
+    [SerializeField] Sprite[] pinSprite = new Sprite[2];
+
+    [Header("Audio")]
+    [SerializeField] AudioMixer audioMixer;
+    AudioSource click;
 
     void Start() {
+        click = GetComponent<AudioSource>();
+
         PlayerPrefs.GetInt("StaticStart", 1);
-        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 1f);
+        PlayerPrefs.GetInt("AsteroidCollisions", 1);
     }
 
     void Update() {
-        PlayerPrefs.SetFloat("Volume", volumeSlider.value);
-        GameObject.Find("PersistantObjects").GetComponent<AudioSource>().volume = volumeSlider.value;
-        
-        ssPin.sprite = PinSprite[PlayerPrefs.GetInt("StaticStart", 1)];
-        acPin.sprite = PinSprite[PlayerPrefs.GetInt("AsteroidCollisions", 1)];
+        pinObjects[0].sprite = pinSprite[PlayerPrefs.GetInt("StaticStart", 1)];
+        pinObjects[1].sprite = pinSprite[PlayerPrefs.GetInt("AsteroidCollisions", 1)];
+        pinObjects[2].sprite = Screen.fullScreen ? pinSprite[1] : pinSprite[0];
     }
 
     public void Begin() {
@@ -35,6 +40,15 @@ public class TitlePanel : MonoBehaviour
         click.Play();
         settingsPanel.SetActive(true);
         titlePanel.SetActive(false);
+    }
+
+    public void OnMusicSliderChange(float value) {
+        audioMixer.SetFloat("MusicVol", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
+    }
+
+    public void OnSFXSliderChange(float value) {
+        audioMixer.SetFloat("SFXVol", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
+        click.Play();
     }
 
     public void ResetData() {
@@ -54,12 +68,10 @@ public class TitlePanel : MonoBehaviour
     public void ToggleAsteroidCollisions()
     {
         click.Play();
-        if (PlayerPrefs.GetInt("AsteroidCollisions", 1) == 1)
-        {
+        if (PlayerPrefs.GetInt("AsteroidCollisions", 1) == 1) {
             PlayerPrefs.SetInt("AsteroidCollisions", 0);
         }
-        else
-        {
+        else {
             PlayerPrefs.SetInt("AsteroidCollisions", 1);
         }
     }
@@ -71,6 +83,16 @@ public class TitlePanel : MonoBehaviour
         }
         else {
             PlayerPrefs.SetInt("StaticStart", 1);
+        }
+    }
+
+    public void ToggleFullscreen() {
+        click.Play();
+        if (Screen.fullScreen) {
+            Screen.fullScreen = false;
+        }
+        else {
+            Screen.fullScreen = true;
         }
     }
 

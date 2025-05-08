@@ -28,11 +28,7 @@ public class BombPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) {
-            float bombsCollected = other.GetComponent<PlayerController>().bombs;
-            if (bombsCollected < 5) {
-                other.GetComponent<PlayerController>().bombs++;
-            }
-
+            other.GetComponent<BombController>().bombCount++;
             gameObject.SetActive(false);
         }
     }

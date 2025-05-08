@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7169875875801183312}
   - component: {fileID: 2462769402411317444}
   - component: {fileID: 4983972868757187371}
+  - component: {fileID: 6258491117443279246}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -41,14 +42,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2810874653876979591}
   serializedVersion: 8
-  lengthInSec: 2
+  lengthInSec: 0.05
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -223,7 +224,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.2696729, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -670,8 +671,8 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Position: {x: -0.85, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: -45}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -808,7 +809,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 90
       mode: 0
       spread: 0
       speed:
@@ -870,7 +871,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1487,9 +1488,9 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 3048278790467863283, guid: 8cf2b35966fc6c347be583e640985933, type: 3}
-    - sprite: {fileID: 2548899246239958825, guid: 8cf2b35966fc6c347be583e640985933, type: 3}
-    - sprite: {fileID: 673268608, guid: 8cf2b35966fc6c347be583e640985933, type: 3}
+    - sprite: {fileID: 5927001058020352993, guid: 9f21cccd4819df1439d857fc82dcc18d, type: 3}
+    - sprite: {fileID: 1005179013342015223, guid: 9f21cccd4819df1439d857fc82dcc18d, type: 3}
+    - sprite: {fileID: -320374609, guid: 9f21cccd4819df1439d857fc82dcc18d, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -3936,7 +3937,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 0
     ratio: 1
     lifetime:
@@ -4783,7 +4784,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4836,6 +4836,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6258491117443279246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810874653876979591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04535ac779c076468d2989cbd1b7cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3027207482146087396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4846,7 +4858,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6000827773617818907}
   - component: {fileID: 4620170078013643283}
-  - component: {fileID: 7458362331875165688}
+  - component: {fileID: -1978424672227436303}
+  - component: {fileID: 7896171677791403989}
   - component: {fileID: 7213778089665861281}
   m_Layer: 0
   m_Name: SonarWave
@@ -4915,19 +4928,46 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 164981836875239561, guid: 8cf2b35966fc6c347be583e640985933, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -477425101017865440, guid: 9f21cccd4819df1439d857fc82dcc18d, type: 3}
+  m_Color: {r: 1, g: 0.2696729, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.41, y: 0.32}
+  m_Size: {x: 0.375, y: 1.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &7458362331875165688
-CircleCollider2D:
+--- !u!50 &-1978424672227436303
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027207482146087396}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!68 &7896171677791403989
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4961,7 +5001,18 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.95
+  m_EdgeRadius: 0.02
+  m_Points:
+  - {x: -0.15, y: 0.7}
+  - {x: 0.05, y: 0.5}
+  - {x: 0.15, y: 0.2}
+  - {x: 0.15, y: -0.2}
+  - {x: 0.05, y: -0.5}
+  - {x: -0.15, y: -0.7}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!114 &7213778089665861281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4974,6 +5025,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49aa050f5be1ea54091bdfe87ed72c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutoffSize: {x: 30, y: 30}
-  rotationSpeed: 40
-  sonarDuration: 2
+  sonarSpeed: 10
+  sonarSizeRate: 2

@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,15 +8,10 @@ public class PlayerController : MonoBehaviour
     public bool oppositeGravity = false;
     bool hasStarted = false;
 
-    [HideInInspector]
-    public float bombs = 0;
-    [SerializeField] GameObject bullet;
-    [SerializeField] Image bombMeter;
-
     [SerializeField] float multiplier;
     [SerializeField] float playerSpeed;
     float currentSpeed;
-    public float currentRotation;
+    float currentRotation = -45f;
 
     [SerializeField] ParticleSystem ps;
     public string deathBy {get; private set;}
@@ -30,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        GetComponent<CircleCollider2D>().enabled = true;
         GetComponent<PlayerInput>().enabled = true;
         GetComponent<Animator>().enabled = false;
     }
@@ -39,9 +34,6 @@ public class PlayerController : MonoBehaviour
             deathBy = "Planet";
             Die();
         }
-
-        float bombAmount = bombs / 5;
-        bombMeter.fillAmount = bombAmount;
     }
 
     void FixedUpdate() {
@@ -55,7 +47,7 @@ public class PlayerController : MonoBehaviour
                 currentSpeed += multiplier * Time.deltaTime;
             }
             if (currentRotation < 0) {
-                currentRotation += 900 * Time.deltaTime;
+                currentRotation += 350 * Time.deltaTime;
             }
         }
         else {
@@ -63,7 +55,7 @@ public class PlayerController : MonoBehaviour
                 currentSpeed -= multiplier * Time.deltaTime;
             }
             if (currentRotation > -90) {
-                currentRotation -= 900 * Time.deltaTime;
+                currentRotation -= 350 * Time.deltaTime;
             }
         }
 
@@ -80,15 +72,16 @@ public class PlayerController : MonoBehaviour
     }
 
     public void ShootInput(InputAction.CallbackContext context) {
-        if (context.performed && bombs > 0) {
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 0));
-            bombs--;
+        if (context.performed) {
+            GetComponent<BombController>().ShootBomb();
         }
     }
 
     void Die() {
         GameState.instance.isDead = true;
         transform.localScale = Vector3.zero;
+        GetComponentInChildren<ParticleSystem>().Stop();
+        GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<PlayerInput>().enabled = false;
     }
 

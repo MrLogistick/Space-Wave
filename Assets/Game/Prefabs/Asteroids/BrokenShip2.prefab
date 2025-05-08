@@ -82,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1487971977646132118, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: m_Name
-      value: AsteroidTiny
+      value: BrokenShip2
       objectReference: {fileID: 0}
     - target: {fileID: 5237731540098753983, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -94,11 +94,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5237731540098753983, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.0625
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5237731540098753983, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.0625
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5237731540098753983, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -187,7 +187,7 @@ PrefabInstance:
     - target: {fileID: 7941468681033038875, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2244543243340742949, guid: cf1ec0c4bc26cee48ad93ddbac8fe36b, type: 3}
+      objectReference: {fileID: 1215523003, guid: 58962d68d69615740985e5d24584274f, type: 3}
     - target: {fileID: 8736919151067910478, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: m_Size.x
       value: 0.6297403
@@ -204,7 +204,8 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.0039812922
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5237731540098753983, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8463616527046472587, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
     - {fileID: 8936814050024298524, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
@@ -217,5 +218,49 @@ PrefabInstance:
     - {fileID: 8985777253611060843, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
     - {fileID: 365256256336314443, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1487971977646132118, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1120592648676461401}
   m_SourcePrefab: {fileID: 100100000, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
+--- !u!1 &2396077169152935979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1487971977646132118, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
+  m_PrefabInstance: {fileID: 3884009280602211261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1120592648676461401
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2396077169152935979}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5

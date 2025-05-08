@@ -53,30 +53,35 @@ public class Score : MonoBehaviour
     }
 
     void DisplayMessage(int fieldsEndured, bool isGargantuan) {
-        if (fieldsEndured == 0) {
+        if (isGargantuan) {
             dm.text = Random.value < 0.5f
-                ? (isGargantuan ? "Did you see that one coming?" : "You didn't even get to the good part yet!")
-                : (isGargantuan ? "No way you didn't see that MEGAroid coming." : "You just killed an innocent pilot. Hope you feel good.");
+                ? "It's the slowest moving target, do better!"
+                : "Try shooting it twice next time!";
+        }
+        else if (fieldsEndured == 0) {
+            dm.text = Random.value < 0.5f
+                ? "You didn't even get to the good part yet!"
+                : "You just killed an innocent pilot. Hope you feel good.";
         }
         else if (fieldsEndured == 1) {
             dm.text = Random.value < 0.5f
-                ? (isGargantuan ? "Sometimes you can't help but hit it I guess." : "That was a toughy.")
-                : (isGargantuan ? "By now you should expect it." : "Guess you could only handle the first field.");
+                ? "That was a toughy."
+                : "Guess you could only handle the first field.";
         }
         else if (fieldsEndured <= 3) {
             dm.text = Random.value < 0.5f
-                ? (isGargantuan ? "most casualties come from the megaroids, don't feel bad." : "You were great! Until the pilot died...")
-                : (isGargantuan ? "Another Megaroid casualty, great." : "There's only so many pilots in the universe you know.");
+                ? "You were great! Until the pilot died..."
+                : "There's only so many pilots in the universe you know.";
         }
         else if (fieldsEndured <= 8) {
             dm.text = Random.value < 0.5f
-                ? (isGargantuan ? "If only this wasn't the only path to get through this system." : "An above average guide is nothing to complain about!")
-                : (isGargantuan ? "They don't call this the 'Gravity Graveyard' for nothing." : "Do you want to try being a pilot? Thought not.");
+                ? "An above average guide is nothing to complain about!"
+                : "Do you want to try being a pilot? Thought not.";
         }
         else if (fieldsEndured <= 16) {
             dm.text = Random.value < 0.5f
-                ? (isGargantuan ? "Woah, if only those pesky Megaroids weren't there." : "Wow, you nearly reached tear-speed.")
-                : (isGargantuan ? "Lucky the Megaroid came. Wait, you weren't meant to hear that..." : "Wait, this can't be right.");
+                ? "Wow, you nearly reached tear-speed."
+                : "Wait, this can't be right.";
         }
         else
         {

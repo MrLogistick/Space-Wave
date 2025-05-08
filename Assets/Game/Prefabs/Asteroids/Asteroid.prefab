@@ -105,6 +105,9 @@ MonoBehaviour:
   minRotationSpeed: 30
   maxRotationSpeed: 100
   maxSpeed: 30
+  spawnedMiniroids: 10
+  miniroidSpawnRange: 10
+  flashColor: {r: 1, g: 1, b: 1, a: 0.5882353}
   ps: {fileID: 0}
 --- !u!60 &5237731540098753983
 PolygonCollider2D:
@@ -181,9 +184,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487971977646132118}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1000000
   m_LinearDamping: 0

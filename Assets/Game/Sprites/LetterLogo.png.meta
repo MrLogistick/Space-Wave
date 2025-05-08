@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 8cf2b35966fc6c347be583e640985933
+guid: 218821695d83a0e40ad7c6908035a505
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 164981836875239561
-    second: SonarWave_0
-  - first:
-      213: 3048278790467863283
-    second: SonarWave_1
-  - first:
-      213: 2548899246239958825
-    second: SonarWave_2
+      213: -5482243972222448837
+    second: LetterLogo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -79,7 +73,7 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -119,111 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SonarWave_0
+      name: LetterLogo_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 98017554b122a4200800000000000000
-      internalID: 164981836875239561
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SonarWave_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 30
-        width: 2
-        height: 2
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f2c132d869ad4a20800000000000000
-      internalID: 3048278790467863283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SonarWave_2
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 29
-        width: 3
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 927c46c1c528f5320800000000000000
-      internalID: 2548899246239958825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SonarWave_3
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 28
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f095fc07ecbead4c8d1fde810c477ac
-      internalID: 673268608
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SonarWave_Bullet
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 23
-        width: 6
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 420fecc61c9f29f43a13e69a2dabf027
-      internalID: 1789215320
+      spriteID: b3b87a747282be3b0800000000000000
+      internalID: -5482243972222448837
       vertices: []
       indices: 
       edges: []
@@ -232,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 46939a9b641b92d41b78fc1ec999005f
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -242,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SonarWave_0: 164981836875239561
-      SonarWave_1: 3048278790467863283
-      SonarWave_2: 2548899246239958825
-      SonarWave_3: 673268608
-      SonarWave_Bullet: 1789215320
+      LetterLogo_0: -5482243972222448837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

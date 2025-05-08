@@ -27,9 +27,9 @@ public class AsteroidGenerator : MonoBehaviour
     public int fieldsEndured {get; private set;} = 0;
 
     [Header("Megaroid & Other Settings")]
-    [SerializeField] GameObject[] targetObjects;
+    public GameObject[] targetObjects;
     [SerializeField] float megaroidPositioning;
-    public bool mgOnScreen = true;
+    public bool megaroidActive = true;
 
     void Start() {
         StartCoroutine(MegaroidSpawnDelay());
@@ -39,28 +39,29 @@ public class AsteroidGenerator : MonoBehaviour
 
     IEnumerator MegaroidSpawnDelay() {
         yield return new WaitForSeconds(3);
-        mgOnScreen = false;
+        megaroidActive = false;
     }
 
     IEnumerator AsteroidSpawner()
     {
-        while (!GameState.instance.isDead)
-        {
-            if (!mgOnScreen && Random.value <= 0.1f) {
-                mgOnScreen = true;
+        while (!GameState.instance.isDead) {
+
+            int randomInt = Random.Range(0, 100);
+            if (randomInt < 10 && !megaroidActive) { // 10% chance to spawn
                 Spawn(targetObjects[0], Random.Range(0, 360));
-
-                print("New Megaroid Spawned");
+                megaroidActive = true;
+                // Spawning a Megaroid
             }
-            else if (Random.value <= 0.01f) {
+            else if (randomInt < 12) { // 2% chance to spawn
                 Spawn(targetObjects[1], 0);
-
-                print("Bomb Pickup Spawned");
+                // Spawning a Bomb
             }
-            else {
-                for (int i = 0; i < asteroidDensity; i++) {
+            else { // 88% chance to spawn
+                for (int i = 0; i < asteroidDensity; i++)
+                {
                     Spawn(targetObjects[Random.Range(2, targetObjects.Length)], Random.Range(0, 360));
                 }
+                //Spawning a normal asteroid
             }
 
             float asteroidRandomRate = Random.Range(asteroidRate - asteroidRateSpread, asteroidRate + asteroidRateSpread);
@@ -70,12 +71,11 @@ public class AsteroidGenerator : MonoBehaviour
         yield break;
     }
 
-    private void Spawn(GameObject target, float rot)
+    void Spawn(GameObject target, float rot)
     {
         float yPos = (target == targetObjects[0])
             ? megaroidPositioning * (Random.value < 0.5f ? -1 : 1)
             : Random.Range(-Camera.main.orthographicSize, Camera.main.orthographicSize);
-
 
         transform.position = new Vector2(transform.position.x, yPos);
 
@@ -84,25 +84,24 @@ public class AsteroidGenerator : MonoBehaviour
 
     IEnumerator AsteroidFieldSpawner() {
         while (!GameState.instance.isDead) {
-            
+
             asteroidDensity = 1;
             fieldWarning.SetActive(false);
-
             float fieldRandomRate = Random.Range(fieldRate - fieldRateSpread, fieldRate + fieldRateSpread);
             yield return new WaitForSeconds(fieldRandomRate - fieldPrewarning);
 
             fieldWarning.SetActive(true);
-
             yield return new WaitForSeconds(fieldPrewarning);
 
             asteroidDensity = fieldDensity;
             asteroidSpeed += asteroidSpeedJump;
 
-            if (asteroidRate > maxAsteroidRate) {
+            if (asteroidRate > maxAsteroidRate)
+            {
                 asteroidRate -= asteroidRateJump;
             }
-
-            if (fieldRate > maxFieldRate) {
+            if (fieldRate > maxFieldRate)
+            {
                 fieldRate -= fieldRateJump;
             }
 
