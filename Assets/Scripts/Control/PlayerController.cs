@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,20 +12,24 @@ public class PlayerController : MonoBehaviour
     float currentSpeed;
     float currentRotation = -45f;
 
-    [SerializeField] ParticleSystem ps;
+    bool canControl = false;
     public string deathBy {get; private set;}
 
-    IEnumerator Start() {
+    CircleCollider2D coll;
+    PlayerInput playerInput;
+    Animator anim;
+
+    void Start() {
+        coll = GetComponent<CircleCollider2D>();
+        playerInput = GetComponent<PlayerInput>();
+        anim = GetComponent<Animator>();
+
+        anim.applyRootMotion = false;
+
         if (PlayerPrefs.GetInt("StaticStart", 1) == 0) {
-            GetComponent<Animator>().SetBool("StaticStart", false);
+            anim.SetBool("StaticStart", false);
             hasStarted = true;
         }
-
-        yield return new WaitForSeconds(1);
-
-        GetComponent<CircleCollider2D>().enabled = true;
-        GetComponent<PlayerInput>().enabled = true;
-        GetComponent<Animator>().enabled = false;
     }
 
     void Update() {
@@ -34,6 +37,9 @@ public class PlayerController : MonoBehaviour
             deathBy = "Planet";
             Die();
         }
+
+        coll.enabled = canControl;
+        playerInput.enabled = canControl;
     }
 
     void FixedUpdate() {
@@ -77,19 +83,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void EndCutscene() {
+        anim.applyRootMotion = true;
+        canControl = true;
+    }
+
     void Die() {
         GameState.instance.isDead = true;
-        transform.localScale = Vector3.zero;
         GetComponentInChildren<ParticleSystem>().Stop();
-        GetComponent<CircleCollider2D>().enabled = false;
-        GetComponent<PlayerInput>().enabled = false;
+
+        canControl = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Asteroid")) {
-            Instantiate(ps, transform.position, transform.rotation);
             deathBy = other.gameObject.name;
+
             Die();
+            anim.SetTrigger("Explode");
         }
     }
 }

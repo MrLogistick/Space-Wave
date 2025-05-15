@@ -7,6 +7,9 @@ public class Score : MonoBehaviour
     [SerializeField] TextMeshProUGUI hiScore;
     [SerializeField] TextMeshProUGUI dm;
 
+    [SerializeField] Color fourthWallColour;
+    Color originalColour;
+
     bool deathMessageShown = false;
     float elapsedTime;
     string playerScore;
@@ -15,6 +18,7 @@ public class Score : MonoBehaviour
     [SerializeField] PlayerController pc;
 
     void Start() {
+        originalColour = dm.color;
         float savedScore = PlayerPrefs.GetFloat("HighScore", 0f);
         int minutes = Mathf.FloorToInt(savedScore / 60);
         int seconds = Mathf.FloorToInt(savedScore % 60);
@@ -53,6 +57,8 @@ public class Score : MonoBehaviour
     }
 
     void DisplayMessage(int fieldsEndured, bool isGargantuan) {
+        dm.color = originalColour;
+
         if (isGargantuan) {
             dm.text = Random.value < 0.5f
                 ? "It's the slowest moving target, do better!"
@@ -60,43 +66,44 @@ public class Score : MonoBehaviour
         }
         else if (fieldsEndured == 0) {
             dm.text = Random.value < 0.5f
-                ? "You didn't even get to the good part yet!"
-                : "You just killed an innocent pilot. Hope you feel good.";
+                ? "Do you want to try being the pilot? Thought not."
+                : "And thats one more body in the rings. Great job!";
         }
         else if (fieldsEndured == 1) {
             dm.text = Random.value < 0.5f
-                ? "That was a toughy."
-                : "Guess you could only handle the first field.";
+                ? "At least you endured the first field."
+                : "After that barrage of asteroids, killed by a stray. You're a pro.";
         }
         else if (fieldsEndured <= 3) {
             dm.text = Random.value < 0.5f
-                ? "You were great! Until the pilot died..."
-                : "There's only so many pilots in the universe you know.";
+                ? "Not such a bad run guide, but you could do better."
+                : "You barely scratched the surface of the rings, tiger.";
         }
         else if (fieldsEndured <= 8) {
             dm.text = Random.value < 0.5f
-                ? "An above average guide is nothing to complain about!"
-                : "Do you want to try being a pilot? Thought not.";
+                ? "Just a little longer and you would've reached tear-speed!"
+                : "Have to be better than good to get through the rings, champion.";
         }
         else if (fieldsEndured <= 16) {
-            dm.text = Random.value < 0.5f
-                ? "Wow, you nearly reached tear-speed."
-                : "Wait, this can't be right.";
-        }
-        else
-        {
+            dm.color = fourthWallColour;
             FourthWallMessages();
+        }
+        else if (fieldsEndured <= 31) {
+            dm.color = fourthWallColour;
+
+            dm.text = Random.value < 0.5f
+                ? "This can't be right... {fieldsEndured} fields?"
+                : "Don't cheer yourself on, {fieldsEndured} fields is nothing!";
         }
     }
 
-    private void FourthWallMessages()
-    {
+    void FourthWallMessages() {        
         int incrementedES = PlayerPrefs.GetInt("ExtremeScore", 0) + 1;
         PlayerPrefs.SetInt("ExtremeScore", incrementedES);
 
-        if (PlayerPrefs.GetInt("ExtremeScore", 0) > 6)
+        if (PlayerPrefs.GetInt("ExtremeScore", 0) > 8)
         {
-            dm.text = "Another one dead. This is exciting.";
+            dm.text = "16 fields if halfway. You only got to {fieldsEndured}, Laughable.";
         }
         else
         {
@@ -106,27 +113,33 @@ public class Score : MonoBehaviour
                     break;
 
                 case 1:
-                    dm.text = "HAHAHAHA, I set you up!";
+                    dm.text = "Well done, you got farther than I expected! But never far enough.";
                     break;
 
                 case 2:
-                    dm.text = "I rigged your ship so it could never reach tear-speed!!";
+                    dm.text = "You think you can escape the rings? You can't.";
                     break;
 
                 case 3:
-                    dm.text = "You're just going to endlessly send pilots to their deaths!!!";
+                    dm.text = "It's the end of the line, guide, it was from the start.";
                     break;
 
                 case 4:
-                    dm.text = "It was all a fabrication, no one has ever passed through the 'Gravity Graveyard' before!!!!";
+                    dm.text = "'Guide', even that was fake! You're just a tool for murder!";
                     break;
 
                 case 5:
-                    dm.text = "Guides aren't real, you're just a tool for murder!!!!!";
+                    dm.text = "They call this the 'Gravity Graveyard', because no one has ever passed through before.";
                     break;
 
                 case 6:
-                    dm.text = "You'll never make it to the other side of the Twin-World Ring!!!!!!";
+                    dm.text = "And I gave you my hostages to be my executioner.";
+                    break;
+                case 7:
+                    dm.text = "You'll never break out, I'll give you every last person in the universe to kill!";
+                    break;
+                case 8:
+                    dm.text = "If you must know, you haven't even made it halfway!";
                     break;
             }
         }

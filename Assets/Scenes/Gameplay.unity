@@ -188,8 +188,6 @@ MonoBehaviour:
   - {fileID: 4227109740355757687, guid: ba13d583b2dcf3342a23a474f0aeb607, type: 3}
   - {fileID: 2396077169152935979, guid: 5ec9bed602e834c4ba12ff9a75c5f557, type: 3}
   - {fileID: 2396077169152935979, guid: 9da732816239d4e4a80af14e916a3363, type: 3}
-  - {fileID: 2396077169152935979, guid: 28e49206b18b0e34896fd7da6012867f, type: 3}
-  - {fileID: 2396077169152935979, guid: 38257f167ea67c84f8cdcc3226a2fadd, type: 3}
   megaroidPositioning: 8
   megaroidActive: 1
 --- !u!114 &156122553
@@ -212,8 +210,6 @@ MonoBehaviour:
   - {fileID: 4227109740355757687, guid: ba13d583b2dcf3342a23a474f0aeb607, type: 3}
   - {fileID: 2396077169152935979, guid: 5ec9bed602e834c4ba12ff9a75c5f557, type: 3}
   - {fileID: 2396077169152935979, guid: 9da732816239d4e4a80af14e916a3363, type: 3}
-  - {fileID: 2396077169152935979, guid: 28e49206b18b0e34896fd7da6012867f, type: 3}
-  - {fileID: 2396077169152935979, guid: 38257f167ea67c84f8cdcc3226a2fadd, type: 3}
 --- !u!1 &201532487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,30 +1446,6 @@ PrefabInstance:
       propertyPath: bombMeter
       value: 
       objectReference: {fileID: 635415003}
-    - target: {fileID: 2819307313511485948, guid: cc8b58f812ff4c240947c02461080264, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2819307313511485948, guid: cc8b58f812ff4c240947c02461080264, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.2696729
-      objectReference: {fileID: 0}
-    - target: {fileID: 2819307313511485948, guid: cc8b58f812ff4c240947c02461080264, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6328544327535045550, guid: cc8b58f812ff4c240947c02461080264, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6328544327535045550, guid: cc8b58f812ff4c240947c02461080264, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6328544327535045550, guid: cc8b58f812ff4c240947c02461080264, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7349013212495407695, guid: cc8b58f812ff4c240947c02461080264, type: 3}
       propertyPath: m_Name
       value: Player
