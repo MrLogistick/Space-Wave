@@ -98,7 +98,10 @@ public class AsteroidBehaviour : MonoBehaviour
 
     void DestroyAsteroid()
     {
-        Instantiate(ps, transform.position, Quaternion.Euler(0, 0, 0));
+        ParticleSystem explosion = Instantiate(ps, transform.position, Quaternion.Euler(0, 0, 0));
+        var particleVelocity = explosion.velocityOverLifetime;
+        particleVelocity.x = -asteroidSpeed;
+        
         gameObject.SetActive(false);
     }
 }

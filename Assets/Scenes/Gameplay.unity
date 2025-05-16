@@ -165,18 +165,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidRate: 0.6
-  maxAsteroidRate: 0.25
-  asteroidRateSpread: 0.075
+  maxAsteroidRate: 0.24
+  asteroidRateSpread: 0.1
   asteroidRateJump: 0.02
   <asteroidSpeed>k__BackingField: 17
   <asteroidSpeedSpread>k__BackingField: 3
   asteroidSpeedJump: 1
   fieldRate: 40
-  maxFieldRate: 20
+  maxFieldRate: 17.5
   fieldRateSpread: 5
   fieldRateJump: 2.5
   fieldDensity: 3
-  fieldPrewarning: 2
+  fieldPrewarning: 0.5
   minFieldLife: 5
   maxFieldLife: 12
   fieldWarning: {fileID: 1157951143}
@@ -1450,6 +1450,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7349013212495407695, guid: cc8b58f812ff4c240947c02461080264, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2350,6 +2354,7 @@ MonoBehaviour:
   playerTime: {fileID: 1020263518}
   hiScore: {fileID: 1105376847}
   dm: {fileID: 348519571}
+  fourthWallColour: {r: 0, g: 0, b: 0, a: 0}
   ag: {fileID: 156122552}
   pc: {fileID: 989171338}
 --- !u!82 &2045125021

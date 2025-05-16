@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8976158555235378030}
   - component: {fileID: 8749745876214362253}
   - component: {fileID: 6600009786459197921}
+  - component: {fileID: 9160720463790082023}
   m_Layer: 0
   m_Name: SonarPickup
   m_TagString: Untagged
@@ -147,4 +148,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd1e5f12c032514e97cd93bf1f67fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 40
+  maxSpeed: 20
+--- !u!95 &9160720463790082023
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609688683628004967}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f90b7d44e7e5b74ea030906c6dc4769, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

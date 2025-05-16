@@ -44,7 +44,7 @@ public class AsteroidGenerator : MonoBehaviour
 
     IEnumerator AsteroidSpawner()
     {
-        while (!GameState.instance.isDead) {
+        while (!GameState.instance.isDead && fieldsEndured < 32) {
 
             int randomInt = Random.Range(0, 100);
             if (randomInt < 10 && !megaroidActive) { // 10% chance to spawn
@@ -83,7 +83,7 @@ public class AsteroidGenerator : MonoBehaviour
     }
 
     IEnumerator AsteroidFieldSpawner() {
-        while (!GameState.instance.isDead) {
+        while (!GameState.instance.isDead && fieldsEndured < 32) {
 
             asteroidDensity = 1;
             fieldWarning.SetActive(false);
@@ -111,6 +111,7 @@ public class AsteroidGenerator : MonoBehaviour
             fieldsEndured++;
         }
 
+        fieldWarning.SetActive(false);
         yield break;
     }
 }

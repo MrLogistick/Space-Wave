@@ -121,7 +121,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,6 +143,50 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdb369d4739454344bf4907e5d5df85c
+      internalID: 1870810329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SonarPickup_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3807a0625cfa2cf4bb932cdb5cce231c
+      internalID: -323230072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SonarPickup_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -150,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3666c53f49926be4882efe87ce918bd3
-      internalID: 861385119
+      spriteID: 703818054a03cfb45a19693a7b4b34db
+      internalID: -1339428375
       vertices: []
       indices: 
       edges: []
@@ -160,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 230dedb68349f864bb53b4f5809fcd38
+    spriteID: f94a0b4564a75a04ea0d183129399c10
     internalID: 0
     vertices: []
     indices: 
@@ -171,7 +215,9 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       SonarPickup_0: -5993407648809890763
-      SonarPickup_1: 861385119
+      SonarPickup_1: 1870810329
+      SonarPickup_2: -323230072
+      SonarPickup_3: -1339428375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
