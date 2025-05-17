@@ -117,7 +117,7 @@ public class Score : MonoBehaviour
                     break;
 
                 case 2:
-                    dm.text = "You think you can escape the rings? You can't.";
+                    dm.text = "You think you can escape the rings? You can't. I took away your tear capabilities!";
                     break;
 
                 case 3:
