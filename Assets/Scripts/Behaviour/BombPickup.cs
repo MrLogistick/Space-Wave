@@ -1,23 +1,8 @@
 using UnityEngine;
 
-public class BombPickup : MonoBehaviour
+public class BombPickup : ObstacleBehaviour
 {
-    [SerializeField] float maxSpeed;
-    float speed;
     bool isCollected = false;
-
-    AsteroidGenerator ag;
-
-    void Start()
-    {
-        ag = GameObject.Find("AsteroidSpawn").GetComponent<AsteroidGenerator>();
-
-        speed = Random.Range(ag.asteroidSpeed - ag.asteroidSpeedSpread, ag.asteroidSpeed + ag.asteroidSpeedSpread);
-        if (speed > maxSpeed)
-        {
-            speed -= ag.asteroidSpeed - maxSpeed;
-        }
-    }
 
     void Update() {
         if (isCollected) return;
@@ -27,8 +12,12 @@ public class BombPickup : MonoBehaviour
 
         if (transform.position.x <= -30)
         {
-            gameObject.SetActive(false);
+            DestroyPickup();
         }
+    }
+
+    public void DestroyPickup() {
+        DisableObject(prefabs[objID], gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -39,9 +28,5 @@ public class BombPickup : MonoBehaviour
             GetComponent<Animator>().enabled = true;
             isCollected = true;
         }
-    }
-
-    public void DestroyPickup() {
-        gameObject.SetActive(false);
     }
 }

@@ -1,15 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class AsteroidBehaviour : MonoBehaviour
+public class AsteroidBehaviour : ObstacleBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float minRotationSpeed;
-    [SerializeField] float maxRotationSpeed;
-    [SerializeField] float maxSpeed;
     [SerializeField] int spawnedMiniroids;
     [SerializeField] float miniroidSpawnRange;
-    float asteroidSpeed;
     float rotationSpeed;
 
     [Header("Health")]
@@ -19,40 +15,32 @@ public class AsteroidBehaviour : MonoBehaviour
     int megaroidInitialHealth = 2;
 
     [SerializeField] ParticleSystem ps;
-    AsteroidGenerator ag;
 
     void Start() {
-        ag = GameObject.Find("AsteroidSpawn").GetComponent<AsteroidGenerator>();
         asteroidHealth = gameObject.name.Contains("Gargantuan") ? megaroidInitialHealth : asteroidInitialHealth;
-
-        asteroidSpeed = Random.Range(ag.asteroidSpeed - ag.asteroidSpeedSpread, ag.asteroidSpeed + ag.asteroidSpeedSpread);
-        if (asteroidSpeed > maxSpeed) {
-            asteroidSpeed -= ag.asteroidSpeed - maxSpeed;
-        }
-
-        rotationSpeed = Random.Range(minRotationSpeed, maxRotationSpeed) * (Random.value < 0.5f ? -1 : 1);
+        rotationSpeed = Random.Range(rotationSpeedRange.x, rotationSpeedRange.y) * (Random.value < 0.5f ? -1 : 1);
     }
 
 
     void Update() {
         Vector2 target = new Vector2(-30, transform.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, target, asteroidSpeed * GameState.instance.slowDown * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * GameState.instance.slowDown * Time.deltaTime);
         transform.Rotate(Vector3.forward * rotationSpeed * GameState.instance.slowDown * Time.deltaTime);
 
         HealthCheck();
         if (transform.position.x <= -30) {
             if (gameObject.name.Contains("Gargantuan")) {
-                ag.megaroidActive = false;
+                generator.megaroidActive = false;
             }
 
-            Destroy(gameObject);
+            DisableObject(prefabs[objID], gameObject);
         }
     }
 
     void HealthCheck() {
         if (asteroidHealth <= 0) {
             if (gameObject.name.Contains("Gargantuan")) {
-                ag.megaroidActive = false;
+                generator.megaroidActive = false;
 
                 SpawnMiniroids();
             }
@@ -92,7 +80,8 @@ public class AsteroidBehaviour : MonoBehaviour
             Vector2 pos = transform.position;
             Vector2 spawnPos = pos + Random.insideUnitCircle * miniroidSpawnRange;
 
-            ag.gameObject.GetComponent<MultiObjectPool>().GetFromPool(ag.targetObjects[5], spawnPos, Quaternion.Euler(0, 0, Random.Range(0, 360)));
+            var spawnedRoid = generator.gameObject.GetComponent<MultiObjectPool>().GetFromPool(generator.targetObjects[5], spawnPos, Quaternion.Euler(0, 0, Random.Range(0, 360)));
+            spawnedRoid.GetComponent<AsteroidBehaviour>().speed = Random.Range(speed - generator.asteroidSpeedSpread, speed + generator.asteroidSpeedSpread);
         }
     }
 
@@ -100,8 +89,8 @@ public class AsteroidBehaviour : MonoBehaviour
     {
         ParticleSystem explosion = Instantiate(ps, transform.position, Quaternion.Euler(0, 0, 0));
         var particleVelocity = explosion.velocityOverLifetime;
-        particleVelocity.x = -asteroidSpeed;
-        
-        gameObject.SetActive(false);
+        particleVelocity.x = -speed;
+
+        DisableObject(prefabs[objID], gameObject);
     }
 }

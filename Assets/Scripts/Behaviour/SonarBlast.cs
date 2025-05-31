@@ -7,7 +7,7 @@ public class SonarBlast : MonoBehaviour
     [SerializeField] float sonarSizeRate;
 
     IEnumerator Start() {
-        transform.localScale = Vector3.zero;
+        transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
         yield return new WaitForSeconds(5f);
 

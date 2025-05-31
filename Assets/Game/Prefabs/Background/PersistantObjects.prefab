@@ -160,6 +160,8 @@ MonoBehaviour:
   backgroundMusic:
   - {fileID: 8300000, guid: a641475b5186b994c9eae8934462742c, type: 3}
   - {fileID: 8300000, guid: e5481d41b7633ab42b5c55faaff00060, type: 3}
+  - {fileID: 8300000, guid: bc50fe2e01d72a4479d857319826e5cc, type: 3}
+  - {fileID: 8300000, guid: 07bc08dca8c2786469b29996a2b4bed1, type: 3}
 --- !u!1001 &2643397721752032973
 PrefabInstance:
   m_ObjectHideFlags: 0

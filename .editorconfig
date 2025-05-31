@@ -1,0 +1,8 @@
+root = true
+
+[*.cs]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+
+csharp_new_line_before_open_brace = methods, properties, types, accessors, anonymous_methods, control_blocks, event_accessors, indexers, lambdas, local_functions

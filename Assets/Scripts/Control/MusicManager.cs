@@ -4,54 +4,42 @@ using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
-    float speedUp = 1;
+    float speedUp = 1f;
     AudioSource music;
-
     [SerializeField] AudioClip[] backgroundMusic;
 
     IEnumerator Start() {
         music = GetComponent<AudioSource>();
 
         while (true) {
-            for (int i = 0; i < backgroundMusic.Length; i++)
-            {
-                music.clip = backgroundMusic[i];
+            for (int i = 0; i < backgroundMusic.Length; i++) {
                 music.Play();
-                yield return new WaitForSeconds(music.clip.length + 1f);
+                yield return new WaitWhile(() => music.isPlaying);
+                yield return new WaitForSeconds(1f);
+                music.clip = backgroundMusic[i];
             }
         }
     }
 
-    void Update()
-    {
-        if (SceneManager.GetActiveScene().name == "Gameplay")
-        {
-            if (GameState.instance.isDead)
-            {
+    void Update() {
+        if (SceneManager.GetActiveScene().name == "Gameplay") {
+            if (GameState.instance.isDead) {
                 music.pitch = GameState.instance.slowDown;
                 speedUp = 0;
-            }
-            else
-            {
+            } else {
                 music.pitch = speedUp;
                 SpeedUpMusic();
             }
-        }
-        else
-        {
+        } else {
             SpeedUpMusic();
             music.pitch = speedUp;
         }
     }
 
-    private void SpeedUpMusic()
-    {
-        if (speedUp < 1)
-        {
+    void SpeedUpMusic() {
+        if (speedUp < 1) {
             speedUp += Time.deltaTime;
-        }
-        else
-        {
+        } else {
             speedUp = 1;
         }
     }

@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 8.5, z: 0}
-  m_LocalScale: {x: 44, y: 3, z: 1}
+  m_LocalScale: {x: 36, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6836153439889342950}
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613a9080ee2b4b8429412d826449ae5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 6293818838315312381, guid: cc8b58f812ff4c240947c02461080264, type: 3}
+  playerController: {fileID: 0}
 --- !u!95 &5192420911073608396
 Animator:
   serializedVersion: 7
@@ -886,7 +886,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 44, y: 1, z: 1}
+    m_Scale: {x: 36, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -5087,7 +5087,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 8.5, z: 0}
-  m_LocalScale: {x: 44, y: 3, z: 1}
+  m_LocalScale: {x: 36, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8711635464121730994}
@@ -5875,7 +5875,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 44, y: 1, z: 1}
+    m_Scale: {x: 36, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0

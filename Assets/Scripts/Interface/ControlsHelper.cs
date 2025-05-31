@@ -1,18 +1,10 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ControlsHelper : MonoBehaviour
 {
-    [SerializeField] Image mouse;
-
     void Start() {
-        if (PlayerPrefs.GetInt("HasPlayed", 0) == 0)
-        {
-            StartCoroutine(HideDelay());
-        }
-        else
-        {
+        if (PlayerPrefs.GetInt("TutorialEnabled", 0) == 0) {
             gameObject.SetActive(false);
         }
     }
@@ -23,9 +15,8 @@ public class ControlsHelper : MonoBehaviour
         }
     }
 
-    IEnumerator HideDelay() {
-        yield return new WaitForSeconds(6f);
-        PlayerPrefs.SetInt("HasPlayed", 1);
+    public void Hide() {
+        PlayerPrefs.SetInt("TutorialEnabled", 0);
         gameObject.SetActive(false);
     }
 }

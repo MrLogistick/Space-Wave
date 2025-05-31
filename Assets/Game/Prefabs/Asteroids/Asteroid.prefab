@@ -102,9 +102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d8e3d130566a047b230b46e944bf13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRotationSpeed: 30
-  maxRotationSpeed: 100
+  speed: 0
   maxSpeed: 30
+  rotationSpeedRange: {x: -180, y: 180}
+  objID: 0
+  generator: {fileID: 0}
+  pool: {fileID: 0}
+  prefabs: []
   spawnedMiniroids: 10
   miniroidSpawnRange: 10
   flashColor: {r: 1, g: 1, b: 1, a: 0.5882353}

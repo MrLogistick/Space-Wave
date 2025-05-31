@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update() {
-        if (Mathf.Abs(transform.position.y) > 13 && !GameState.instance.isDead) {
+        if (Mathf.Abs(transform.position.y) > 11 && !GameState.instance.isDead) {
             deathBy = "Planet";
             Die();
         }

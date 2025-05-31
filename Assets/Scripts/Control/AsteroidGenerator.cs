@@ -3,38 +3,59 @@ using UnityEngine;
 
 public class AsteroidGenerator : MonoBehaviour
 {
-    [Header("Asteroid Settings")]
+    [Header("Asteroid Spawn")]
     [SerializeField] float asteroidRate;
     [SerializeField] float maxAsteroidRate;
     [SerializeField] float asteroidRateSpread;
     [SerializeField] float asteroidRateJump;
     float asteroidDensity = 1;
 
-    [field: SerializeField] public float asteroidSpeed {get; private set;}
-    [field: SerializeField] public float asteroidSpeedSpread { get; private set; }
+    [Header("Asteroid Speed")]
+    [SerializeField] float asteroidSpeed;
+    public float asteroidSpeedSpread { get; private set; }
     [SerializeField] float asteroidSpeedJump;
+    [SerializeField] float newSpeedJump;
+    float speedJump;
 
-    [Header("Field Settings")]
+    [Header("Field Spawn")]
     [SerializeField] float fieldRate;
     [SerializeField] float maxFieldRate;
     [SerializeField] float fieldRateSpread;
     [SerializeField] float fieldRateJump;
     [SerializeField] float fieldDensity;
 
+    [Header("Field Warning")]
     [SerializeField] float fieldPrewarning;
-    [SerializeField] float minFieldLife, maxFieldLife;
     [SerializeField] GameObject fieldWarning;
     public int fieldsEndured {get; private set;} = 0;
+
+    [Header("Field Life")]
+    [SerializeField] float minFieldLife, maxFieldLife;
+    [SerializeField] int fieldsToWin;
 
     [Header("Megaroid & Other Settings")]
     public GameObject[] targetObjects;
     [SerializeField] float megaroidPositioning;
     public bool megaroidActive = true;
 
-    void Start() {
+    IEnumerator Start() {
+        targetObjects = GetComponent<MultiObjectPool>().prefabs;
+
+        yield return new WaitForSeconds(0.1f);
+
         StartCoroutine(MegaroidSpawnDelay());
         StartCoroutine(AsteroidSpawner());
         StartCoroutine(AsteroidFieldSpawner());
+    }
+
+    void Update() {
+        if (fieldsEndured >= 16) {
+            speedJump = 0; // current speed is 60
+        } else if (fieldsEndured >= 8) {
+            speedJump = newSpeedJump; // speed 36.4
+        } else {
+            speedJump = asteroidSpeedJump; // speed 22
+        }
     }
 
     IEnumerator MegaroidSpawnDelay() {
@@ -44,22 +65,23 @@ public class AsteroidGenerator : MonoBehaviour
 
     IEnumerator AsteroidSpawner()
     {
-        while (!GameState.instance.isDead && fieldsEndured < 32) {
+        while (!GameState.instance.isDead && fieldsEndured < fieldsToWin) {
 
             int randomInt = Random.Range(0, 100);
             if (randomInt < 10 && !megaroidActive) { // 10% chance to spawn
-                Spawn(targetObjects[0], Random.Range(0, 360));
+                Spawn(0, Random.Range(0, 360));
                 megaroidActive = true;
                 // Spawning a Megaroid
             }
             else if (randomInt < 12) { // 2% chance to spawn
-                Spawn(targetObjects[1], 0);
+                Spawn(1, 0);
                 // Spawning a Bomb
             }
             else { // 88% chance to spawn
                 for (int i = 0; i < asteroidDensity; i++)
                 {
-                    Spawn(targetObjects[Random.Range(2, targetObjects.Length)], Random.Range(0, 360));
+                    int objID = Random.Range(2, targetObjects.Length);
+                    Spawn(objID, Random.Range(0, 360));
                 }
                 //Spawning a normal asteroid
             }
@@ -71,19 +93,21 @@ public class AsteroidGenerator : MonoBehaviour
         yield break;
     }
 
-    void Spawn(GameObject target, float rot)
+    void Spawn(int objID, float rot)
     {
-        float yPos = (target == targetObjects[0])
+        float yPos = (targetObjects[objID] == targetObjects[0])
             ? megaroidPositioning * (Random.value < 0.5f ? -1 : 1)
             : Random.Range(-Camera.main.orthographicSize, Camera.main.orthographicSize);
 
         transform.position = new Vector2(transform.position.x, yPos);
 
-        GetComponent<MultiObjectPool>().GetFromPool(target, transform.position, Quaternion.Euler(0, 0, rot));
+        var spawnedRoid = GetComponent<MultiObjectPool>().GetFromPool(targetObjects[objID], transform.position, Quaternion.Euler(0, 0, rot));
+        spawnedRoid.GetComponent<ObstacleBehaviour>().speed = Random.Range(asteroidSpeed - asteroidSpeedSpread, asteroidSpeed + asteroidSpeedSpread);
+        spawnedRoid.GetComponent<ObstacleBehaviour>().objID = objID;
     }
 
     IEnumerator AsteroidFieldSpawner() {
-        while (!GameState.instance.isDead && fieldsEndured < 32) {
+        while (!GameState.instance.isDead && fieldsEndured < fieldsToWin) {
 
             asteroidDensity = 1;
             fieldWarning.SetActive(false);
@@ -94,7 +118,7 @@ public class AsteroidGenerator : MonoBehaviour
             yield return new WaitForSeconds(fieldPrewarning);
 
             asteroidDensity = fieldDensity;
-            asteroidSpeed += asteroidSpeedJump;
+            asteroidSpeed += speedJump;
 
             if (asteroidRate > maxAsteroidRate)
             {

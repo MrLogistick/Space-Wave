@@ -1,127 +1,118 @@
 fileFormatVersion: 2
-guid: b5670a0c1967c464d9bc0a3b73e12db8
+guid: af6e2b912b5d9b7419f4ce1a2e8fb19f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -357421434760999972
-    second: Mouse_0
+      213: 2538947763536922547
+    second: KeyboardControls_0
   - first:
-      213: 1506059532727745469
-    second: Mouse_1
+      213: -8416562896430686303
+    second: KeyboardControls_1
   - first:
-      213: 6951863735662602030
-    second: Mouse_2
+      213: 7830534764367469174
+    second: KeyboardControls_2
   - first:
-      213: -5248880233624170229
-    second: Mouse_3
+      213: 974450015110918864
+    second: KeyboardControls_3
   - first:
-      213: 3033183314803414045
-    second: Mouse_4
+      213: -3754758142747312652
+    second: KeyboardControls_4
   - first:
-      213: 206407676937707439
-    second: Mouse_5
+      213: -3524551137492659725
+    second: KeyboardControls_5
   - first:
-      213: 2547671495467779820
-    second: Mouse_6
+      213: 7213572397633601281
+    second: KeyboardControls_6
   - first:
-      213: 9062499129308504459
-    second: Mouse_7
+      213: -2365316740470840623
+    second: KeyboardControls_7
   - first:
-      213: -4580875165984197824
-    second: Mouse_8
+      213: 2741750311240811813
+    second: KeyboardControls_8
   - first:
-      213: -7319190855899628408
-    second: Mouse_9
+      213: -1040219337071180
+    second: KeyboardControls_9
   - first:
-      213: 2533154328078668260
-    second: Mouse_10
+      213: 4436555529594039107
+    second: KeyboardControls_10
   - first:
-      213: 3150626806568355086
-    second: Mouse_11
+      213: -5942674830004211781
+    second: KeyboardControls_11
   - first:
-      213: -2850553871561281453
-    second: Mouse_12
+      213: -2703647747889098738
+    second: KeyboardControls_12
   - first:
-      213: -389575765250044306
-    second: Mouse_13
+      213: -2562333330850209832
+    second: KeyboardControls_13
   - first:
-      213: 1820637262496067199
-    second: Mouse_14
+      213: 5577585542931305226
+    second: KeyboardControls_14
   - first:
-      213: -6346323614403405508
-    second: Mouse_15
+      213: -6994967655263959432
+    second: KeyboardControls_15
   - first:
-      213: -7637564836004506017
-    second: Mouse_16
+      213: 6372809956898745631
+    second: KeyboardControls_16
   - first:
-      213: -9032799485421835531
-    second: Mouse_17
+      213: -4176564891141918924
+    second: KeyboardControls_17
   - first:
-      213: -6962001098401753703
-    second: Mouse_18
+      213: 5755309597042350056
+    second: KeyboardControls_18
   - first:
-      213: -7413991362102919352
-    second: Mouse_19
+      213: 4569934260097148293
+    second: KeyboardControls_19
   - first:
-      213: 2746194653146656430
-    second: Mouse_20
+      213: -2487762244777451813
+    second: KeyboardControls_20
   - first:
-      213: -7116788724578128275
-    second: Mouse_21
+      213: -1339795391305640138
+    second: KeyboardControls_21
   - first:
-      213: 2952896397997306028
-    second: Mouse_22
+      213: -3864591746020156410
+    second: KeyboardControls_22
   - first:
-      213: -5619969615006322049
-    second: Mouse_23
+      213: -7536254031188677108
+    second: KeyboardControls_23
   - first:
-      213: -8513270135761459775
-    second: Mouse_24
+      213: -6066764656481225589
+    second: KeyboardControls_24
   - first:
-      213: -6946253406723520549
-    second: Mouse_25
+      213: 6879420199954881876
+    second: KeyboardControls_25
   - first:
-      213: 5703288202831690552
-    second: Mouse_26
+      213: -4061060349185252524
+    second: KeyboardControls_26
   - first:
-      213: -7400176338036666150
-    second: Mouse_27
+      213: -8488780572382839315
+    second: KeyboardControls_27
   - first:
-      213: 643291737778034719
-    second: Mouse_28
+      213: -5352909622022132828
+    second: KeyboardControls_28
   - first:
-      213: -108037537450899270
-    second: Mouse_29
+      213: 6544329237998613100
+    second: KeyboardControls_29
   - first:
-      213: 946363932966372908
-    second: Mouse_30
+      213: -4456193050630098509
+    second: KeyboardControls_30
   - first:
-      213: -7645114902011335250
-    second: Mouse_31
+      213: 224450644656371546
+    second: KeyboardControls_31
   - first:
-      213: -7631157938227196364
-    second: Mouse_32
+      213: 4165401819232883647
+    second: KeyboardControls_32
   - first:
-      213: 446913088082598048
-    second: Mouse_33
+      213: -98963625586004018
+    second: KeyboardControls_33
   - first:
-      213: 4212400859118991559
-    second: Mouse_34
+      213: 7750387324299929698
+    second: KeyboardControls_34
   - first:
-      213: 246134118481826481
-    second: Mouse_35
+      213: -6753578770769228797
+    second: KeyboardControls_35
   - first:
-      213: 5094921307049163335
-    second: Mouse_36
-  - first:
-      213: 341473336159144829
-    second: Mouse_37
-  - first:
-      213: 3578702882994160882
-    second: Mouse_38
-  - first:
-      213: -2072932234473290427
-    second: Mouse_39
+      213: 1999884079611133030
+    second: KeyboardControls_36
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -256,7 +247,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mouse_0
+      name: KeyboardControls_0
       rect:
         serializedVersion: 2
         x: 0
@@ -271,14 +262,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cdbc5f9491f2a0bf0800000000000000
-      internalID: -357421434760999972
+      spriteID: 3b704ecf9872c3320800000000000000
+      internalID: 2538947763536922547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_1
+      name: KeyboardControls_1
       rect:
         serializedVersion: 2
         x: 38
@@ -293,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dbbf3d26a2996e410800000000000000
-      internalID: 1506059532727745469
+      spriteID: 1af148873ac523b80800000000000000
+      internalID: -8416562896430686303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_2
+      name: KeyboardControls_2
       rect:
         serializedVersion: 2
         x: 76
@@ -315,14 +306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e27e61b2c3bf97060800000000000000
-      internalID: 6951863735662602030
+      spriteID: 67a587751e5abac60800000000000000
+      internalID: 7830534764367469174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_3
+      name: KeyboardControls_3
       rect:
         serializedVersion: 2
         x: 114
@@ -337,8 +328,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b01134ebc3b3827b0800000000000000
-      internalID: -5248880233624170229
+      spriteID: 0d27f0a3021f58d00800000000000000
+      internalID: 974450015110918864
       vertices: []
       indices: 
       edges: []
@@ -347,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4e7a572e849f14b49b4c638f2b310011
+    spriteID: 39d21ba466a26834ea25f04fd74ca76b
     internalID: 0
     vertices: []
     indices: 
@@ -357,10 +348,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mouse_0: -357421434760999972
-      Mouse_1: 1506059532727745469
-      Mouse_2: 6951863735662602030
-      Mouse_3: -5248880233624170229
+      KeyboardControls_0: 2538947763536922547
+      KeyboardControls_1: -8416562896430686303
+      KeyboardControls_2: 7830534764367469174
+      KeyboardControls_3: 974450015110918864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

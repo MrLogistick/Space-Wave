@@ -17,6 +17,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6048889485943244462, guid: 754f817ec5467ed4f9d54047b5f55940, type: 3}
     - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
+      propertyPath: maxSpeed
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: maxRotationSpeed
       value: 150
       objectReference: {fileID: 0}

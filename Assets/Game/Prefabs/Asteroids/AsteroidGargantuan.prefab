@@ -18,10 +18,26 @@ PrefabInstance:
       objectReference: {fileID: 8284452171508498644, guid: eaf073883c654b94798a880cb51883a0, type: 3}
     - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: maxSpeed
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
+      propertyPath: flashColor.a
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
+      propertyPath: flashColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
+      propertyPath: flashColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
+      propertyPath: flashColor.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
@@ -31,6 +47,14 @@ PrefabInstance:
     - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: minRotationSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
+      propertyPath: rotationSpeedRange.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: -2781600156792076324, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
+      propertyPath: rotationSpeedRange.y
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -701294489827099770, guid: 4f66b2a8a16d0c5428e92feacddd7e0a, type: 3}
       propertyPath: m_Mass
