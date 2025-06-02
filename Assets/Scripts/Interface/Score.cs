@@ -14,7 +14,7 @@ public class Score : MonoBehaviour
     int attempts = 0;
 
     [SerializeField] AsteroidGenerator ag;
-    [SerializeField] PlayerController pc;
+    [SerializeField] MovementController movement;
 
     void Start() {
         attempts = PlayerPrefs.GetInt("Attempts", 0);
@@ -46,7 +46,7 @@ public class Score : MonoBehaviour
             if (deathMessageShown) return;
             deathMessageShown = true;
 
-            if (pc.deathBy.Contains("Gargantuan")) {
+            if (movement.deathBy.Contains("Gargantuan")) {
                 DisplayMessage(ag.fieldsEndured, true);
             }
             else {

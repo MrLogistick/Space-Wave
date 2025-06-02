@@ -19,8 +19,6 @@ public class TitlePanel : MonoBehaviour
     [SerializeField] AudioMixer audioMixer;
     AudioSource click;
 
-    FullScreenMode screenState;
-
     void Start() {
         click = GetComponent<AudioSource>();
 
@@ -111,11 +109,9 @@ public class TitlePanel : MonoBehaviour
         click.Play();
         if (Screen.fullScreenMode == FullScreenMode.FullScreenWindow) {
             Screen.fullScreenMode = FullScreenMode.Windowed;
-            screenState = FullScreenMode.Windowed;
         }
         else {
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-            screenState = FullScreenMode.FullScreenWindow;
         }
     }
 

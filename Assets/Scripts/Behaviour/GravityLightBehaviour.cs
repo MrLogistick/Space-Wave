@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class GravityLightBehaviour : MonoBehaviour
 {
-    [SerializeField] PlayerController playerController;
+    [SerializeField] MovementController movement;
 
     void Update() {
-        if (playerController.oppositeGravity) {
+        if (movement.gravity == 1) {
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(1).gameObject.SetActive(false);
 

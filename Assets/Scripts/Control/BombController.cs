@@ -1,7 +1,8 @@
-using Unity.Mathematics;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Obsolete("BombController is obsolete. Use WeaponController instead")]
 public class BombController : MonoBehaviour
 {
     [SerializeField] int bombCapacity = 5;

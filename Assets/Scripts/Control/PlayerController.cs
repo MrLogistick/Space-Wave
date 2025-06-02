@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[Obsolete("PlayerController is obsolete. Use MovementController instead")]
 public class PlayerController : MonoBehaviour
 {
-    [HideInInspector]
-    public bool oppositeGravity = false;
+    bool oppositeGravity = false;
     bool hasStarted = false;
 
     [SerializeField] float multiplier;

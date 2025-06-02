@@ -8,11 +8,13 @@ public class AsteroidGenerator : MonoBehaviour
     [SerializeField] float maxAsteroidRate;
     [SerializeField] float asteroidRateSpread;
     [SerializeField] float asteroidRateJump;
-    float asteroidDensity = 1;
+    float currentRate;
+    [SerializeField] float asteroidDensity;
+    float currentDensity;
 
     [Header("Asteroid Speed")]
     [SerializeField] float asteroidSpeed;
-    public float asteroidSpeedSpread { get; private set; }
+    [field: SerializeField] public float asteroidSpeedSpread { get; private set; }
     [SerializeField] float asteroidSpeedJump;
     [SerializeField] float newSpeedJump;
     float speedJump;
@@ -23,6 +25,7 @@ public class AsteroidGenerator : MonoBehaviour
     [SerializeField] float fieldRateSpread;
     [SerializeField] float fieldRateJump;
     [SerializeField] float fieldDensity;
+    float fieldAsteroidRate;
 
     [Header("Field Warning")]
     [SerializeField] float fieldPrewarning;
@@ -40,6 +43,7 @@ public class AsteroidGenerator : MonoBehaviour
 
     IEnumerator Start() {
         targetObjects = GetComponent<MultiObjectPool>().prefabs;
+        currentDensity = 1f;
 
         yield return new WaitForSeconds(0.1f);
 
@@ -49,6 +53,8 @@ public class AsteroidGenerator : MonoBehaviour
     }
 
     void Update() {
+        fieldAsteroidRate = asteroidRate - 0.1f;
+
         if (fieldsEndured >= 16) {
             speedJump = 0; // current speed is 60
         } else if (fieldsEndured >= 8) {
@@ -63,11 +69,10 @@ public class AsteroidGenerator : MonoBehaviour
         megaroidActive = false;
     }
 
-    IEnumerator AsteroidSpawner()
-    {
-        while (!GameState.instance.isDead && fieldsEndured < fieldsToWin) {
-
+    IEnumerator AsteroidSpawner() {
+        while (fieldsEndured < fieldsToWin && GameState.instance.slowDown > 0) {
             int randomInt = Random.Range(0, 100);
+
             if (randomInt < 10 && !megaroidActive) { // 10% chance to spawn
                 Spawn(0, Random.Range(0, 360));
                 megaroidActive = true;
@@ -78,7 +83,7 @@ public class AsteroidGenerator : MonoBehaviour
                 // Spawning a Bomb
             }
             else { // 88% chance to spawn
-                for (int i = 0; i < asteroidDensity; i++)
+                for (int i = 0; i < currentDensity; i++)
                 {
                     int objID = Random.Range(2, targetObjects.Length);
                     Spawn(objID, Random.Range(0, 360));
@@ -86,7 +91,7 @@ public class AsteroidGenerator : MonoBehaviour
                 //Spawning a normal asteroid
             }
 
-            float asteroidRandomRate = Random.Range(asteroidRate - asteroidRateSpread, asteroidRate + asteroidRateSpread);
+            float asteroidRandomRate = Random.Range(currentRate - asteroidRateSpread, currentRate + asteroidRateSpread);
             yield return new WaitForSeconds(asteroidRandomRate);
         }
 
@@ -108,34 +113,32 @@ public class AsteroidGenerator : MonoBehaviour
 
     IEnumerator AsteroidFieldSpawner() {
         while (!GameState.instance.isDead && fieldsEndured < fieldsToWin) {
-
-            asteroidDensity = 1;
-            fieldWarning.SetActive(false);
+            currentRate = asteroidRate;
             float fieldRandomRate = Random.Range(fieldRate - fieldRateSpread, fieldRate + fieldRateSpread);
             yield return new WaitForSeconds(fieldRandomRate - fieldPrewarning);
-
+    
             fieldWarning.SetActive(true);
             yield return new WaitForSeconds(fieldPrewarning);
-
-            asteroidDensity = fieldDensity;
+    
+            currentRate = fieldAsteroidRate;
+            currentDensity = fieldDensity;
             asteroidSpeed += speedJump;
-
-            if (asteroidRate > maxAsteroidRate)
-            {
+    
+            if (asteroidRate > maxAsteroidRate) {
                 asteroidRate -= asteroidRateJump;
             }
-            if (fieldRate > maxFieldRate)
-            {
+            if (fieldRate > maxFieldRate) {
                 fieldRate -= fieldRateJump;
             }
-
+    
             float fieldLength = Random.Range(minFieldLife, maxFieldLife);
             yield return new WaitForSeconds(fieldLength);
-
+            
             fieldsEndured++;
+            currentDensity = asteroidDensity;
+            fieldWarning.SetActive(false);
         }
 
-        fieldWarning.SetActive(false);
         yield break;
     }
 }
