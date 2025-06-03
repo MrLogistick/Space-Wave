@@ -4,6 +4,7 @@ public class ShipController : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] float boostSpeed;
+    [SerializeField] float acceleration;
     [SerializeField] int fieldsToBoost;
     [SerializeField] float turnSpeed;
 
@@ -19,6 +20,9 @@ public class ShipController : MonoBehaviour
         weapon = transform.parent.GetComponent<WeaponController>();
 
         movement.moveSpeed = moveSpeed;
+        movement.boostSpeed = boostSpeed;
+        movement.acceleration = acceleration;
+        movement.fieldsToBoost = fieldsToBoost;
         movement.turnSpeed = turnSpeed;
 
         weapon.bombPrefab = bombPrefab;

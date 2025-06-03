@@ -13,7 +13,6 @@ public class Score : MonoBehaviour
     string playerScore;
     int attempts = 0;
 
-    [SerializeField] AsteroidGenerator ag;
     [SerializeField] MovementController movement;
 
     void Start() {
@@ -47,10 +46,10 @@ public class Score : MonoBehaviour
             deathMessageShown = true;
 
             if (movement.deathBy.Contains("Gargantuan")) {
-                DisplayMessage(ag.fieldsEndured, true);
+                DisplayMessage(GameState.instance.fieldsEndured, true);
             }
             else {
-                DisplayMessage(ag.fieldsEndured, false);
+                DisplayMessage(GameState.instance.fieldsEndured, false);
             }
         }
 

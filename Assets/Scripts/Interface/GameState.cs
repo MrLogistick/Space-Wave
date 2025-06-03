@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    public bool isDead = false;
     public float timeSurvived;
+    public int fieldsEndured;
+    public int fieldsToWin;
     public bool newHiscore = false;
+
+    public bool isDead = false;
     public float slowDown;
 
     [SerializeField] GameObject postGamePanel;

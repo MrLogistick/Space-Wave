@@ -182,7 +182,6 @@ MonoBehaviour:
   fieldWarning: {fileID: 1157951143}
   minFieldLife: 5
   maxFieldLife: 12
-  fieldsToWin: 20
   targetObjects:
   - {fileID: 820784132159414671, guid: 0595ddde5e73d58418bcc3ec2ce8ecb1, type: 3}
   - {fileID: 4609688683628004967, guid: d081a05704d004e40b6376001e74059b, type: 3}
@@ -378,9 +377,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bd2814ab1ea9bd4b91c6e85433b2b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDead: 0
   timeSurvived: 0
+  fieldsEndured: 0
+  fieldsToWin: 24
   newHiscore: 0
+  isDead: 0
   slowDown: 1
   postGamePanel: {fileID: 1533519791}
 --- !u!4 &201532489
@@ -1584,14 +1585,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45
       objectReference: {fileID: 0}
-    - target: {fileID: 6359641058737187692, guid: cc8b58f812ff4c240947c02461080264, type: 3}
-      propertyPath: moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6359641058737187692, guid: cc8b58f812ff4c240947c02461080264, type: 3}
-      propertyPath: boostSpeed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 7349013212495407695, guid: cc8b58f812ff4c240947c02461080264, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2511,7 +2504,6 @@ MonoBehaviour:
   hiScore: {fileID: 1105376847}
   attemptCounter: {fileID: 191964347}
   dm: {fileID: 348519571}
-  ag: {fileID: 156122552}
   movement: {fileID: 989171343}
 --- !u!82 &2045125021
 AudioSource:

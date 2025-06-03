@@ -4,25 +4,28 @@ using UnityEngine.InputSystem;
 public class MovementController : MonoBehaviour
 {
     [HideInInspector] public float moveSpeed;
-    float nextPos;
+    [HideInInspector] public float boostSpeed;
+    float topSpeed;
+    [HideInInspector] public float acceleration;
+    [HideInInspector] public int fieldsToBoost;
+    float currentSpeed;
+
     [HideInInspector] public float turnSpeed;
-    float nextRot;
+    float currentRot = -45f;
 
     [SerializeField] float borderPos;
     [HideInInspector] public string deathBy;
     [HideInInspector] public int gravity = -1;
     bool hasStarted;
     bool canControl;
-
-    Rigidbody2D rb;
+    Animator anim;
 
     void Start() {
-        nextPos = transform.position.y;
-        nextRot = transform.eulerAngles.z;
-        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        anim.applyRootMotion = false;
 
         if (PlayerPrefs.GetInt("StaticStart", 1) == 0) {
-            GetComponent<Animator>().SetBool("StaticStart", false);
+            anim.SetBool("StaticStart", false);
             hasStarted = true;
         }
     }
@@ -31,6 +34,12 @@ public class MovementController : MonoBehaviour
         if (Mathf.Abs(transform.position.y) > borderPos) {
             deathBy = "Planet";
             Die();
+        }
+
+        if (GameState.instance.fieldsEndured < fieldsToBoost) {
+            topSpeed = moveSpeed;
+        } else {
+            topSpeed = boostSpeed;
         }
 
         GetComponentInChildren<Collider2D>().enabled = canControl;
@@ -44,12 +53,21 @@ public class MovementController : MonoBehaviour
     void FixedUpdate() {
         if (!hasStarted) return;
 
-        nextPos += moveSpeed * gravity * Time.fixedDeltaTime;
-        nextRot += turnSpeed * gravity * Time.fixedDeltaTime;
+        currentSpeed += acceleration * gravity * Time.fixedDeltaTime;
+        currentSpeed = Mathf.Clamp(currentSpeed, -topSpeed, topSpeed);
 
-        Vector2 targetPos = new Vector2(rb.position.x, nextPos);
-        rb.MovePosition(targetPos);
-        rb.MoveRotation(nextRot);
+        if (currentRot < 0f && gravity == 1) {
+            currentRot += turnSpeed * Time.fixedDeltaTime;
+        }
+        if (currentRot > -90f && gravity == -1) {
+            currentRot -= turnSpeed * Time.fixedDeltaTime;
+        }
+
+        Vector2 newPos = transform.position;
+        newPos.y += currentSpeed;
+        transform.position = newPos;
+
+        transform.rotation = Quaternion.Euler(0, 0, currentRot);
     }
 
     public void FlipInput(InputAction.CallbackContext context) {
@@ -60,6 +78,7 @@ public class MovementController : MonoBehaviour
     }
 
     public void EndCutscene() {
+        anim.applyRootMotion = true;
         canControl = true;
     }
 

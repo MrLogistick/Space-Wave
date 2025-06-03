@@ -23,7 +23,7 @@ public class BombPickup : ObstacleBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player")) {
-            other.GetComponent<WeaponController>().bombCount++;
+            other.transform.parent.GetComponent<WeaponController>().bombCount++;
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Animator>().enabled = true;
             isCollected = true;
