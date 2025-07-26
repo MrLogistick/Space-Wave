@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShipController : MonoBehaviour
 {
@@ -9,16 +10,22 @@ public class ShipController : MonoBehaviour
     [SerializeField] float turnSpeed;
 
     [SerializeField] GameObject bombPrefab;
-    [SerializeField] int bombCapacity;
+    [SerializeField] Image bombMeter;
+    [SerializeField] bool secondMeterEnabled;
+    [ShowIf("secondMeterEnabled")]
+    [SerializeField] Image secondMeter;
+    [SerializeField] float bombCapacity;
     [SerializeField] int initialBombs;
 
     MovementController movement;
     WeaponController weapon;
 
-    void Awake() {
+    void Awake()
+    {
         movement = transform.parent.GetComponent<MovementController>();
         weapon = transform.parent.GetComponent<WeaponController>();
-
+        bombMeter.enabled = true;
+        
         movement.moveSpeed = moveSpeed;
         movement.boostSpeed = boostSpeed;
         movement.acceleration = acceleration;
@@ -26,6 +33,9 @@ public class ShipController : MonoBehaviour
         movement.turnSpeed = turnSpeed;
 
         weapon.bombPrefab = bombPrefab;
+        weapon.bombMeter = bombMeter;
+        weapon.secondMeterEnabled = secondMeterEnabled;
+        if (secondMeterEnabled) weapon.secondMeter = secondMeter;
         weapon.bombCapacity = bombCapacity;
         weapon.initialBombs = initialBombs;
     }

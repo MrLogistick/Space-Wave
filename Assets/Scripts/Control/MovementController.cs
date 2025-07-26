@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class MovementController : MonoBehaviour
 {
@@ -19,6 +20,15 @@ public class MovementController : MonoBehaviour
     bool hasStarted;
     bool canControl;
     Animator anim;
+
+    void Awake() {
+        foreach (Transform child in transform) {
+            if (child.name == ShipManager.instance.currentShip) {
+                Debug.Log("Using ship: " + ShipManager.instance.currentShip);
+                child.gameObject.SetActive(true);
+            }
+        }
+    }
 
     void Start() {
         anim = GetComponent<Animator>();

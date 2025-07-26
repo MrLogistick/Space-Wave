@@ -13,7 +13,8 @@ public class AsteroidGenerator : MonoBehaviour
     float currentDensity;
 
     [Header("Asteroid Speed")]
-    [SerializeField] float asteroidSpeed;
+    [SerializeField] private float asteroidSpeed;
+    public float _asteroidSpeed => asteroidSpeed;
     [field: SerializeField] public float asteroidSpeedSpread { get; private set; }
     [SerializeField] float asteroidSpeedJump;
     [SerializeField] float newSpeedJump;
@@ -32,7 +33,8 @@ public class AsteroidGenerator : MonoBehaviour
     [SerializeField] GameObject fieldWarning;
 
     [Header("Field Life")]
-    [SerializeField] float minFieldLife, maxFieldLife;
+    [SerializeField] float minFieldLife;
+    [SerializeField] float maxFieldLife;
 
     [Header("Megaroid & Other Settings")]
     public GameObject[] targetObjects;

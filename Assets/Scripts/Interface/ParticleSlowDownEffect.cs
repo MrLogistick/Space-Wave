@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ParticleSlowDownEffect : MonoBehaviour {
+public class ParticleSlowDownEffect : MonoBehaviour
+{
     void Update() {
         string currentScene = SceneManager.GetActiveScene().name;
         var main = GetComponent<ParticleSystem>().main;

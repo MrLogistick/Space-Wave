@@ -11,6 +11,10 @@ public class PostgamePanel : MonoBehaviour
         if (GameState.instance.isDead && GameState.instance.timeSurvived >= PlayerPrefs.GetFloat("HighScore", 0f)) {
             StartCoroutine(NewHighscore());
         }
+
+        if (Input.GetKeyDown(KeyCode.Return) && GameState.instance.isDead) {
+            Restart();
+        }
     }
 
     public void Restart() {

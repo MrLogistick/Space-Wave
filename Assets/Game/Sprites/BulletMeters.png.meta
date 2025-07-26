@@ -1,22 +1,91 @@
 fileFormatVersion: 2
-guid: cc0fadf1789f88342a4400de376ff681
+guid: f73c073477591c6489689bbd0f0a0d80
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8117563401246028826
-    second: BulletsMeter_0
+      213: -8085671701296843257
+    second: BulletMeters_0
   - first:
-      213: -7987904078575671468
-    second: BulletsMeter_1
+      213: 2204178991415934328
+    second: BulletMeters_1
   - first:
-      213: -3172313636990246188
-    second: BulletsMeter_2
+      213: 8143524758393407364
+    second: BulletMeters_2
   - first:
-      213: -7708629946280445587
-    second: BulletsMeter_3
+      213: -4836129447462999201
+    second: BulletMeters_3
   - first:
-      213: -6332556392551253272
-    second: BulletsMeter_4
+      213: 513597937636819589
+    second: BulletMeters_4
+  - first:
+      213: 2884048312384783022
+    second: BulletMeters_5
+  - first:
+      213: -8189976996852494689
+    second: BulletMeters_6
+  - first:
+      213: 5629631375783105304
+    second: BulletMeters_7
+  - first:
+      213: 1592922925118500207
+    second: BulletMeters_8
+  - first:
+      213: 5857968252463302862
+    second: BulletMeters_9
+  - first:
+      213: 1285553113666139914
+    second: BulletMeters_10
+  - first:
+      213: 3944904103985149951
+    second: BulletMeters_11
+  - first:
+      213: 3468595797581521619
+    second: BulletMeters_12
+  - first:
+      213: -893747167872316784
+    second: BulletMeters_13
+  - first:
+      213: 3307677372780908943
+    second: BulletMeters_14
+  - first:
+      213: 8662900856598438578
+    second: BulletMeters_15
+  - first:
+      213: -6672696840813495902
+    second: BulletMeters_16
+  - first:
+      213: -2259205795995207232
+    second: BulletMeters_17
+  - first:
+      213: 1167077677369126512
+    second: BulletMeters_18
+  - first:
+      213: 1499718304631506767
+    second: BulletMeters_19
+  - first:
+      213: -2724519677616537448
+    second: BulletMeters_20
+  - first:
+      213: -437404339680398865
+    second: BulletMeters_21
+  - first:
+      213: 2115732597186782233
+    second: BulletMeters_22
+  - first:
+      213: -8703171832096056451
+    second: BulletMeters_23
+  - first:
+      213: -2563632315249096977
+    second: BulletMeters_24
+  - first:
+      213: 4614621693448002926
+    second: BulletMeters_25
+  - first:
+      213: 1847258442936867562
+    second: BulletMeters_26
+  - first:
+      213: 9053557556212010482
+    second: BulletMeters_27
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,12 +127,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +156,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,6 +166,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -121,115 +203,106 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BulletsMeter_0
+      name: 5Bullets
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 9
-        height: 14
+        y: 16
+        width: 48
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ebc403681f985f80800000000000000
-      internalID: -8117563401246028826
+      spriteID: 706f5c96d6ce9cf80800000000000000
+      internalID: -8085671701296843257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BulletsMeter_1
+      name: 2Bullets
       rect:
         serializedVersion: 2
-        x: 9
-        y: 1
-        width: 10
-        height: 14
+        x: 0
+        y: 0
+        width: 18
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4576a90ff83452190800000000000000
-      internalID: -7987904078575671468
+      spriteID: ca14e2c89aae7bf46996ab369914c226
+      internalID: 1336859458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BulletsMeter_2
+      name: 20Bullets
       rect:
         serializedVersion: 2
-        x: 19
-        y: 1
-        width: 10
-        height: 14
+        x: 58
+        y: 0
+        width: 98
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4d2a1170e8da9f3d0800000000000000
-      internalID: -3172313636990246188
+      spriteID: 17770477e09600a488540080c92aada6
+      internalID: 755793679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BulletsMeter_3
+      name: 10Bullets
       rect:
         serializedVersion: 2
-        x: 29
-        y: 1
-        width: 10
-        height: 14
+        x: 58
+        y: 16
+        width: 98
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d69f30be7e1750590800000000000000
-      internalID: -7708629946280445587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BulletsMeter_4
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 1
-        width: 9
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ea7ad5238d3e18a0800000000000000
-      internalID: -6332556392551253272
+      spriteID: 5cfb4b4b68704a24ca44c62d25c0272a
+      internalID: 1637287385
       vertices: []
       indices: 
       edges: []
@@ -238,7 +311,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: edee57e603efa1445b7941b3f8b36ed4
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +321,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BulletsMeter_0: -8117563401246028826
-      BulletsMeter_1: -7987904078575671468
-      BulletsMeter_2: -3172313636990246188
-      BulletsMeter_3: -7708629946280445587
-      BulletsMeter_4: -6332556392551253272
+      10Bullets: 1637287385
+      20Bullets: 755793679
+      2Bullets: 1336859458
+      5Bullets: -8085671701296843257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

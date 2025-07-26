@@ -24,6 +24,8 @@ public class Score : MonoBehaviour
         int minutes = Mathf.FloorToInt(savedScore / 60);
         int seconds = Mathf.FloorToInt(savedScore % 60);
         hiScore.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        PlayerPrefs.Save();
     }
 
     void Update() {

@@ -1,23 +1,34 @@
-using System.Collections;
 using UnityEngine;
 
 public class SonarBlast : MonoBehaviour
 {
-    [SerializeField] float sonarSpeed;
-    [SerializeField] float sonarSizeRate;
+    [SerializeField] float startSpeed;
+    [SerializeField] float startSize;
+    [SerializeField] float startSizeRate;
+    [SerializeField] float speedInterval;
+    [SerializeField] float sizeInterval;
+    float currentSpeed;
+    float currentSizeRate;
 
-    IEnumerator Start() {
-        transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+    public int damage;
 
-        yield return new WaitForSeconds(5f);
-
-        if (GameState.instance.isDead) yield break;
-        
-        Destroy(gameObject);
+    void Start() {
+        transform.localScale = Vector3.one * startSize;
+        currentSizeRate = startSizeRate;
+        currentSpeed = startSpeed;
     }
 
     void Update() {
-        transform.position += Vector3.right * sonarSpeed * GameState.instance.slowDown * Time.deltaTime;
-        transform.localScale += Vector3.one * sonarSizeRate * GameState.instance.slowDown * Time.deltaTime;
+        transform.position += Vector3.right * currentSpeed * GameState.instance.slowDown * Time.deltaTime;
+        transform.localScale += Vector3.one * currentSizeRate * GameState.instance.slowDown * Time.deltaTime;
+
+        if (currentSpeed > 0) currentSpeed += speedInterval;
+            else currentSpeed = 0.1f;
+        if (currentSizeRate > 0) currentSizeRate += sizeInterval;
+            else currentSizeRate = 0f;
+
+        if (transform.position.x > 30) {
+            Destroy(gameObject);
+        }
     }
 }

@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: a5b27903af854734b806462c0335a4b0
+guid: 77b79d196c542fc4e8e03191cd464c7f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2303422234140695427
-    second: Other Ships_0
+      213: -1033766676993296678
+    second: Arrows_0
   - first:
-      213: -6384623896775133026
-    second: Other Ships_1
-  - first:
-      213: 7042830658276358209
-    second: Other Ships_2
-  - first:
-      213: 8908040872355688177
-    second: Other Ships_3
+      213: 5287939958834139383
+    second: Arrows_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -148,29 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Default
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 38b51b1615667ff10800000000000000
-      internalID: 2303422234140695427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Winged
+      name: Arrows_0
       rect:
         serializedVersion: 2
         x: 0
@@ -178,59 +150,37 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e987f30a4624567a0800000000000000
-      internalID: -6384623896775133026
+      spriteID: ad6bd253fa257a1f0800000000000000
+      internalID: -1033766676993296678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Giant
+      name: Arrows_1
       rect:
         serializedVersion: 2
         x: 16
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 148facf4b292db160800000000000000
-      internalID: 7042830658276358209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Round
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1feeb610af7bf9b70800000000000000
-      internalID: 8908040872355688177
+      spriteID: 7f017e73069826940800000000000000
+      internalID: 5287939958834139383
       vertices: []
       indices: 
       edges: []
@@ -239,7 +189,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8ccc4f9eafbcdd44f8f56fd4e2c357ed
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -249,10 +199,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Default: 2303422234140695427
-      Giant: 7042830658276358209
-      Round: 8908040872355688177
-      Winged: -6384623896775133026
+      Arrows_0: -1033766676993296678
+      Arrows_1: 5287939958834139383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

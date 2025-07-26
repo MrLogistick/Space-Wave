@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: a5b27903af854734b806462c0335a4b0
+guid: 2b73bf54439d6c2499f3dd2bb42171dd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2303422234140695427
-    second: Other Ships_0
+      213: -8454822106055059802
+    second: Shockwaves_0
   - first:
-      213: -6384623896775133026
-    second: Other Ships_1
+      213: 352877625608232534
+    second: Shockwaves_1
   - first:
-      213: 7042830658276358209
-    second: Other Ships_2
+      213: 4314488664829900077
+    second: Shockwaves_2
   - first:
-      213: 8908040872355688177
-    second: Other Ships_3
+      213: -5687876399765972880
+    second: Shockwaves_3
+  - first:
+      213: -7129538954244976863
+    second: Shockwaves_4
+  - first:
+      213: 7119561792186197730
+    second: Shockwaves_5
+  - first:
+      213: 4860506415300806776
+    second: Shockwaves_6
+  - first:
+      213: -3529386577699030407
+    second: Shockwaves_7
+  - first:
+      213: -3693817845204737461
+    second: Shockwaves_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +72,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -148,7 +163,73 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Default
+      name: Shockwaves_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a6d77117107aaa80800000000000000
+      internalID: -8454822106055059802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shockwaves_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65edf83b45ca5e400800000000000000
+      internalID: 352877625608232534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shockwaves_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d25b2aed49420eb30800000000000000
+      internalID: 4314488664829900077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shockwaves_3
       rect:
         serializedVersion: 2
         x: 0
@@ -156,21 +237,65 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38b51b1615667ff10800000000000000
-      internalID: 2303422234140695427
+      spriteID: 0781f91dc8a9011b0800000000000000
+      internalID: -5687876399765972880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Winged
+      name: Shockwaves_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12f0be3581ace0d90800000000000000
+      internalID: -7129538954244976863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shockwaves_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e6a3bb9ab3cdc260800000000000000
+      internalID: 7119561792186197730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shockwaves_6
       rect:
         serializedVersion: 2
         x: 0
@@ -178,59 +303,59 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e987f30a4624567a0800000000000000
-      internalID: -6384623896775133026
+      spriteID: 878038825dcf37340800000000000000
+      internalID: 4860506415300806776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Giant
+      name: Shockwaves_7
       rect:
         serializedVersion: 2
         x: 16
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 148facf4b292db160800000000000000
-      internalID: 7042830658276358209
+      spriteID: 97ab7396b99150fc0800000000000000
+      internalID: -3529386577699030407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Round
+      name: Shockwaves_8
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
+        x: 32
+        y: 0
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1feeb610af7bf9b70800000000000000
-      internalID: 8908040872355688177
+      spriteID: b42a29f8d3cecbcc0800000000000000
+      internalID: -3693817845204737461
       vertices: []
       indices: 
       edges: []
@@ -239,7 +364,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8ccc4f9eafbcdd44f8f56fd4e2c357ed
+    spriteID: d3b5bcc832687514eb15b53cb770c4c8
     internalID: 0
     vertices: []
     indices: 
@@ -249,10 +374,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Default: 2303422234140695427
-      Giant: 7042830658276358209
-      Round: 8908040872355688177
-      Winged: -6384623896775133026
+      Shockwaves_0: -8454822106055059802
+      Shockwaves_1: 352877625608232534
+      Shockwaves_2: 4314488664829900077
+      Shockwaves_3: -5687876399765972880
+      Shockwaves_4: -7129538954244976863
+      Shockwaves_5: 7119561792186197730
+      Shockwaves_6: 4860506415300806776
+      Shockwaves_7: -3529386577699030407
+      Shockwaves_8: -3693817845204737461
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

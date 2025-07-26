@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -8,22 +9,37 @@ public class TitlePanel : MonoBehaviour
 {
     [Header("Panels & Text")]
     [SerializeField] GameObject titlePanel;
+    [SerializeField] GameObject shipsPanel;
     [SerializeField] GameObject settingsPanel;
     [SerializeField] GameObject resetMessage;
 
     [Header("Sprites")]
     [SerializeField] Image[] pinObjects = new Image[4];
     [SerializeField] Sprite[] pinSprite = new Sprite[2];
+    [SerializeField] Image shipIcon;
+    [SerializeField] Sprite[] ships = new Sprite[4];
+    [SerializeField] TextMeshProUGUI shipDisplayName;
 
     [Header("Audio")]
     [SerializeField] AudioMixer audioMixer;
     AudioSource click;
+    [SerializeField] Slider musicSlider;
+    [SerializeField] Slider sfxSlider;
+
+    int currentShipIndex;
+    ShipManager manager;
 
     void Start() {
         click = GetComponent<AudioSource>();
+        manager = ShipManager.instance;
 
         PlayerPrefs.GetInt("StaticStart", 1);
         PlayerPrefs.GetInt("AsteroidCollisions", 1);
+
+        currentShipIndex = manager.unlockedShips.IndexOf(manager.currentShip);
+
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVol");
+        sfxSlider.value = PlayerPrefs.GetFloat("SFXVol");
     }
 
     void Update() {
@@ -34,6 +50,52 @@ public class TitlePanel : MonoBehaviour
 
         audioMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
         audioMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
+
+        shipIcon.sprite = ships[currentShipIndex];
+        RectTransform rt = shipIcon.rectTransform;
+
+        if (currentShipIndex == 3) {
+            rt.sizeDelta = new Vector2(200f, 200f);
+        }
+        else {
+            rt.sizeDelta = new Vector2(100f, 100f);
+        }
+
+        switch (manager.unlockedShips[currentShipIndex]) {
+            case "Default":
+                shipDisplayName.text = "Ares";
+                break;
+            case "Winged":
+                shipDisplayName.text = "Hermes";
+                break;
+            case "Round":
+                shipDisplayName.text = "Artemis";
+                break;
+            case "Giant":
+                shipDisplayName.text = "Zeus";
+                break;
+            case "Generator":
+                shipDisplayName.text = "Hera";
+                break;
+            case "Armoured":
+                shipDisplayName.text = "Posiden";
+                break;
+            case "Pacifist":
+                shipDisplayName.text = "Aphrodite";
+                break;
+            case "Twin":
+                shipDisplayName.text = "Dionysis";
+                break;
+            case "Consumer":
+                shipDisplayName.text = "Hephaestus";
+                break;
+        }
+    }
+
+    public void ShipsPanel() {
+        click.Play();
+        shipsPanel.SetActive(true);
+        titlePanel.SetActive(false);
     }
 
     public void SettingsPanel() {
@@ -44,6 +106,7 @@ public class TitlePanel : MonoBehaviour
 
     public void Back() {
         click.Play();
+        shipsPanel.SetActive(false);
         settingsPanel.SetActive(false);
         titlePanel.SetActive(true);
     }
@@ -52,12 +115,32 @@ public class TitlePanel : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
+    public void Previous() {
+        if (currentShipIndex > 0) {
+            currentShipIndex--;
+        } else {
+            currentShipIndex = manager.unlockedShips.Count - 1;
+        }
+        manager.currentShip = manager.unlockedShips[currentShipIndex];
+    }
+
+    public void Next() {
+        if (currentShipIndex < manager.unlockedShips.Count - 1) {
+            currentShipIndex++;
+        } else {
+            currentShipIndex = 0;
+        }
+        manager.currentShip = manager.unlockedShips[currentShipIndex];
+    }
+
     public void OnMusicSliderChange(float value) {
         PlayerPrefs.SetFloat("MusicVol", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
+        PlayerPrefs.Save();
     }
 
     public void OnSFXSliderChange(float value) {
         PlayerPrefs.SetFloat("SFXVol", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
+        PlayerPrefs.Save();
         click.Play();
     }
 
@@ -65,6 +148,8 @@ public class TitlePanel : MonoBehaviour
         click.Play();
         PlayerPrefs.DeleteKey("HighScore");
         PlayerPrefs.DeleteKey("Attempts");
+        PlayerPrefs.DeleteKey("UnlockedShips");
+        PlayerPrefs.DeleteKey("CurrentShip");
         StartCoroutine(ResetMessage());
     }
 
@@ -82,6 +167,7 @@ public class TitlePanel : MonoBehaviour
         else {
             PlayerPrefs.SetInt("TutorialEnabled", 1);
         }
+        PlayerPrefs.Save();
     }
 
     public void ToggleAsteroidCollisions()
@@ -93,6 +179,7 @@ public class TitlePanel : MonoBehaviour
         else {
             PlayerPrefs.SetInt("AsteroidCollisions", 1);
         }
+        PlayerPrefs.Save();
     }
 
     public void StaticStart() {
@@ -103,6 +190,7 @@ public class TitlePanel : MonoBehaviour
         else {
             PlayerPrefs.SetInt("StaticStart", 1);
         }
+        PlayerPrefs.Save();
     }
 
     public void ToggleFullscreen() {
