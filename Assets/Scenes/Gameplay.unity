@@ -2127,13 +2127,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1687806481}
     - target: {fileID: 8088560589824437179, guid: cc8b58f812ff4c240947c02461080264, type: 3}
+      propertyPath: moveSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088560589824437179, guid: cc8b58f812ff4c240947c02461080264, type: 3}
+      propertyPath: turnSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088560589824437179, guid: cc8b58f812ff4c240947c02461080264, type: 3}
       propertyPath: bombPrefab
       value: 
       objectReference: {fileID: 2284428392625466278, guid: 028db3a11148f8243af047c5d51181d5, type: 3}
     - target: {fileID: 8088560589824437179, guid: cc8b58f812ff4c240947c02461080264, type: 3}
+      propertyPath: boostSpeed
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088560589824437179, guid: cc8b58f812ff4c240947c02461080264, type: 3}
       propertyPath: secondMeter
       value: 
       objectReference: {fileID: 42008619}
+    - target: {fileID: 8088560589824437179, guid: cc8b58f812ff4c240947c02461080264, type: 3}
+      propertyPath: acceleration
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 8763663281609609630, guid: cc8b58f812ff4c240947c02461080264, type: 3}
       propertyPath: bombMeter
       value: 

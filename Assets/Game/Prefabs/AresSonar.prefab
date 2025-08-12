@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7896171677791403989}
   - component: {fileID: 7213778089665861281}
   m_Layer: 0
-  m_Name: Shot
+  m_Name: AresSonar
   m_TagString: Sonar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

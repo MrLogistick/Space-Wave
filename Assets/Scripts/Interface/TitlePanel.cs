@@ -25,6 +25,9 @@ public class TitlePanel : MonoBehaviour
     AudioSource click;
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider sfxSlider;
+    [SerializeField] public bool sfxChanging;
+    [SerializeField] float soundInterval;
+    float timeElapsed;
 
     int currentShipIndex;
     ShipManager manager;
@@ -56,9 +59,17 @@ public class TitlePanel : MonoBehaviour
 
         if (currentShipIndex == 3) {
             rt.sizeDelta = new Vector2(200f, 200f);
-        }
-        else {
+        } else {
             rt.sizeDelta = new Vector2(100f, 100f);
+        }
+
+        if (sfxChanging) {
+            if (timeElapsed > 0f) {
+                timeElapsed -= Time.deltaTime;
+            } else {
+                timeElapsed = soundInterval;
+                click.Play();
+            }
         }
 
         switch (manager.unlockedShips[currentShipIndex]) {
@@ -141,7 +152,7 @@ public class TitlePanel : MonoBehaviour
     public void OnSFXSliderChange(float value) {
         PlayerPrefs.SetFloat("SFXVol", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
         PlayerPrefs.Save();
-        click.Play();
+        sfxChanging = true;
     }
 
     public void ResetData() {

@@ -91,7 +91,7 @@ public class AsteroidGenerator : MonoBehaviour
                     int objID = Random.Range(2, targetObjects.Length);
                     Spawn(objID, Random.Range(0, 360));
                 }
-                //Spawning a normal asteroid
+                // Spawning a normal asteroid
             }
 
             float asteroidRandomRate = Random.Range(currentRate - asteroidRateSpread, currentRate + asteroidRateSpread);
@@ -101,8 +101,7 @@ public class AsteroidGenerator : MonoBehaviour
         yield break;
     }
 
-    void Spawn(int objID, float rot)
-    {
+    void Spawn(int objID, float rot) {
         float yPos = (targetObjects[objID] == targetObjects[0])
             ? megaroidPositioning * (Random.value < 0.5f ? -1 : 1)
             : Random.Range(-Camera.main.orthographicSize, Camera.main.orthographicSize);

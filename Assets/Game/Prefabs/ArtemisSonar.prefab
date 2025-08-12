@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3027207482146087396, guid: ad2145d6fa698f140a254177131fbc45, type: 3}
       propertyPath: m_Name
-      value: AngleShot
+      value: ArtemisSonar
       objectReference: {fileID: 0}
     - target: {fileID: 4620170078013643283, guid: ad2145d6fa698f140a254177131fbc45, type: 3}
       propertyPath: m_Sprite
@@ -56,8 +56,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7213778089665861281, guid: ad2145d6fa698f140a254177131fbc45, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3027207482146087396, guid: ad2145d6fa698f140a254177131fbc45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3792303893808137900}
   m_SourcePrefab: {fileID: 100100000, guid: ad2145d6fa698f140a254177131fbc45, type: 3}
+--- !u!1 &1957088037930197114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3027207482146087396, guid: ad2145d6fa698f140a254177131fbc45, type: 3}
+  m_PrefabInstance: {fileID: 3542701338930839966}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3792303893808137900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957088037930197114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e49ed89d43e4d3438774dc272f1f063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSpeed: 5
+  startSize: 1
+  startSizeRate: 0.8
+  speedInterval: 0.01
+  sizeInterval: 0
+  damage: 1

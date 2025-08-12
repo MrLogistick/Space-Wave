@@ -6,7 +6,6 @@ public class ShipController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float boostSpeed;
     [SerializeField] float acceleration;
-    [SerializeField] int fieldsToBoost;
     [SerializeField] float turnSpeed;
 
     [SerializeField] GameObject bombPrefab;
@@ -29,7 +28,6 @@ public class ShipController : MonoBehaviour
         movement.moveSpeed = moveSpeed;
         movement.boostSpeed = boostSpeed;
         movement.acceleration = acceleration;
-        movement.fieldsToBoost = fieldsToBoost;
         movement.turnSpeed = turnSpeed;
 
         weapon.bombPrefab = bombPrefab;

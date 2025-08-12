@@ -61,7 +61,11 @@ public class AsteroidBehaviour : ObstacleBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Sonar")) {
-            asteroidHealth -= other.GetComponent<SonarBlast>().damage;
+            if (other.GetComponent<SonarBlast>() == null) {
+                asteroidHealth -= other.GetComponent<ArtemisSonar>().damage;
+            } else {
+                asteroidHealth -= other.GetComponent<SonarBlast>().damage;
+            }
             StartCoroutine(DamageFlash());
         }
     }

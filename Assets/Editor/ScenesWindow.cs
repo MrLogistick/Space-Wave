@@ -16,7 +16,7 @@ public class ScenesWindow : EditorWindow
     void OnGUI()
     {
         scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
-        string[] sceneGUIDs = AssetDatabase.FindAssets("t:Scene");
+        string[] sceneGUIDs = AssetDatabase.FindAssets("t:Scene", new[] { "Assets/Scenes" });
 
         foreach (string guid in sceneGUIDs)
         {
