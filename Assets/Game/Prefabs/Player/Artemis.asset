@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db7cb1484343504fac961d76ab477e6, type: 3}
+  m_Name: Artemis
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.2
+  turnSpeed: 350
+  acceleration: 1.5
+  weaponPrefab: {fileID: 1957088037930197114, guid: e11185de9a65feb4192492bdd0235060, type: 3}
+  bombCapacity: 5
+  initialBombs: 2
+  shipSprite: {fileID: 8908040872355688177, guid: a5b27903af854734b806462c0335a4b0, type: 3}
+  shipType: 0
+  colliderObject: {fileID: 6165007433464765159, guid: e2153d5cc7ba8364b9778ccb3b26bca0, type: 3}
