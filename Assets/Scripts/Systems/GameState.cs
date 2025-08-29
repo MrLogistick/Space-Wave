@@ -20,6 +20,10 @@ public class GameState : MonoBehaviour
         }
     }
 
+    void Start() {
+        slowDown = 1f;
+    }
+
     void Update() {
         if (!isDead) return;
 
@@ -27,8 +31,7 @@ public class GameState : MonoBehaviour
         
         if (slowDown > 0f) {
             slowDown -= 0.5f * Time.deltaTime;
-        }
-        else {
+        } else {
             slowDown = 0f;
         }
     }

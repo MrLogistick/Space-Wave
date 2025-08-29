@@ -9,6 +9,15 @@ public class PersistantManager : MonoBehaviour {
     public static PersistantManager instance;
 
     void Awake() {
+        if (instance != null && instance != this) {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
+
+    void Start() {
         foreach (var ship in allShips) {
             unlockedShips.Add(ship, false);
         }

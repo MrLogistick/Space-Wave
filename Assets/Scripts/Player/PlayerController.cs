@@ -1,39 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
     [SerializeField] float borderPos;
-    [HideInInspector] public int gravity;
-    [HideInInspector] public int currentBombs;
 
     [SerializeField] List<Image> bombMeters;
     Dictionary<int, Image> bombMeterLookup = new Dictionary<int, Image>();
 
     Image bombMeter;
     Image secondBombMeter;
+    int gravity = -1;
     float currentSpeed;
-    float currentRot;
+    float currentRot = -45f;
+    float currentBombs;
     bool hasBegun;
     bool canControl;
 
+    [SerializeField] SpriteRenderer sr;
+    PolygonCollider2D coll;
     ShipData data;
     Animator anim;
 
-    void Awake() {
+    IEnumerator Start() {
+        yield return new WaitUntil(() => PersistantManager.instance.currentShip != null);
         data = PersistantManager.instance.currentShip;
-        Instantiate(data.colliderObject, transform, false);
-        GetComponent<SpriteRenderer>().sprite = data.shipSprite;
+
+        SetupShip();
+    }
+
+    void SetupShip() {
+        coll = Instantiate(data.colliderObject, transform, false).GetComponent<PolygonCollider2D>();
+        sr.enabled = true;
+        sr.sprite = data.shipSprite;
 
         foreach (var meter in bombMeters) {
             if (meter.name.Contains("D")) continue;
             int capacity = int.Parse(meter.name.Replace("Bullets", ""));
             bombMeterLookup[capacity] = meter;
         }
-    }
 
-    void Start() {
         anim = GetComponent<Animator>();
         anim.applyRootMotion = false;
         hasBegun = PlayerPrefs.GetInt("StaticStart", 1) == 0 ? true : false;
@@ -44,11 +52,16 @@ public class PlayerController : MonoBehaviour {
         } else {
             bombMeter = bombMeters[2];
             secondBombMeter = bombMeters[3];
+            secondBombMeter.transform.parent.gameObject.SetActive(true);
         }
+
+        bombMeter.transform.parent.gameObject.SetActive(true);
     }
 
     void Update() {
-        GetComponentInChildren<PolygonCollider2D>().enabled = canControl;
+        if (data == null) return;
+
+        coll.enabled = canControl;
         GetComponent<PlayerInput>().enabled = canControl;
 
         UpdateBombMeter();
@@ -63,8 +76,8 @@ public class PlayerController : MonoBehaviour {
 
         currentSpeed += data.acceleration * gravity * Time.deltaTime;
         currentRot += data.turnSpeed * gravity * Time.deltaTime;
-        Mathf.Clamp(currentSpeed, -data.moveSpeed, data.moveSpeed);
-        Mathf.Clamp(currentRot, -90f, 0f);
+        currentSpeed = Mathf.Clamp(currentSpeed, -data.moveSpeed, data.moveSpeed);
+        currentRot = Mathf.Clamp(currentRot, -90f, 0f);
 
         Vector2 newPos = transform.position;
         newPos.y += currentSpeed;
@@ -90,7 +103,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void ShootInput(InputAction.CallbackContext context) {
-        if (context.performed) {
+        if (context.performed && currentBombs > 0) {
             currentBombs--;
             Transform sonar = Instantiate(data.weaponPrefab, transform.position, Quaternion.Euler(0f, 0f, -45f)).transform;
             if (data.shipType == ShipData.ShipType.Artemis) {
@@ -99,13 +112,19 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void EndCutscene() {
+    public void AddBomb(int count) {
+        currentBombs += count;
+    }
+
+    public void EndCutscene() {
         anim.applyRootMotion = true;
         canControl = true;
     }
 
     void Die() {
         GetComponentInChildren<ParticleSystem>().Stop();
+        sr.enabled = false;
+        GameState.instance.isDead = true;
         canControl = false;
     }
 }
