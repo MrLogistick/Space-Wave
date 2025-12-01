@@ -57,14 +57,6 @@ public class AsteroidGenerator : MonoBehaviour
 
     void Update() {
         fieldAsteroidRate = asteroidRate - 0.1f;
-
-        if (state.fieldsEndured >= 16) {
-            speedJump = 0; // current speed is 60
-        } else if (state.fieldsEndured >= 8) {
-            speedJump = newSpeedJump; // speed 36.4
-        } else {
-            speedJump = asteroidSpeedJump; // speed 22
-        }
     }
 
     IEnumerator MegaroidSpawnDelay() {
@@ -90,6 +82,7 @@ public class AsteroidGenerator : MonoBehaviour
                 {
                     int objID = Random.Range(2, targetObjects.Length);
                     Spawn(objID, Random.Range(0, 360));
+                    yield return new WaitForSeconds(Random.Range(0f, 0.1f));
                 }
                 // Spawning a normal asteroid
             }

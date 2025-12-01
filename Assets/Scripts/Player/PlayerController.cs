@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 
     Image bombMeter;
     Image secondBombMeter;
-    int gravity = -1;
+    public int gravity = -1;
     float currentSpeed;
     float currentRot = -45f;
     float currentBombs;
@@ -119,6 +119,13 @@ public class PlayerController : MonoBehaviour {
     public void EndCutscene() {
         anim.applyRootMotion = true;
         canControl = true;
+    }
+
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.CompareTag("Asteroid")) {
+            anim.SetTrigger("Explode");
+            Die();
+        }
     }
 
     void Die() {
